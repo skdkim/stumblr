@@ -8,12 +8,12 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 - Account creation, user login, and demo login
 - Seed data to illustrate the app's features
 - Posting of text, photos, links, audio, and video
+- Interaction with other users' posts (liking and reblogging)
+- Post tagging and search by tags
+- Bug-free
 - Hosted on Heroku
 - Styled and interactive (user action feedback)
 - Production readme (to replace this readme)
-
-- Interaction with other users' posts (liking and reblogging)
-- Post tagging and search by tags
 
 ### Wireframes
 
