@@ -17,6 +17,9 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
+blog_title      | string    |
+blog_description| string    |
+photo_id        | integer   |
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
