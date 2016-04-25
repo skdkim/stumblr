@@ -18,7 +18,7 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 ### Design Docs
 
 - [Wireframes folder](https://github.com/quinnleong/stumblr/tree/master/design_docs/wireframes)
-- [Components](https://github.com/quinnleong/stumblr/blob/master/design_docs/components.md)
+- [Components](https://github.com/quinnleong/stumblr/blob/master/design_docs/Components.md)
 - [Flux Cycles](https://github.com/quinnleong/stumblr/blob/master/design_docs/flux_cycles.md)
 - [API Endpoints](https://github.com/quinnleong/stumblr/blob/master/design_docs/api_endpoints.md)
 - [DB Schema](https://github.com/quinnleong/stumblr/blob/master/design_docs/db_schema.md)
