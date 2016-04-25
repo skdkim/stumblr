@@ -15,7 +15,7 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 - [ ] Styled and interactive (user action feedback)
 - [ ] Production readme (to replace this readme)
 
-### Wireframes and Other Design Docs
+### Design Docs
 
 - [Wireframes folder](https://github.com/quinnleong/stumblr/tree/master/design_docs/wireframes)
 - [Components](https://github.com/quinnleong/stumblr/blob/master/design_docs/components.md)
