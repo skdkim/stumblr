@@ -17,10 +17,11 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 
 ### Wireframes and Other Design Docs
 
-(https://github.com/quinnleong/stumblr/tree/master/design_docs/wireframes)[Wireframes folder]
-(https://github.com/quinnleong/stumblr/blob/master/design_docs/flux_cycles.md)[Flux Cycles]
-(https://github.com/quinnleong/stumblr/blob/master/design_docs/api_endpoints.md)[API Endpoints]
-(https://github.com/quinnleong/stumblr/blob/master/design_docs/db_schema.md)[DB Schema]
+[Wireframes folder](https://github.com/quinnleong/stumblr/tree/master/design_docs/wireframes)
+[Components](https://github.com/quinnleong/stumblr/blob/master/design_docs/components.md)
+[Flux Cycles](https://github.com/quinnleong/stumblr/blob/master/design_docs/flux_cycles.md)
+[API Endpoints](https://github.com/quinnleong/stumblr/blob/master/design_docs/api_endpoints.md)
+[DB Schema](https://github.com/quinnleong/stumblr/blob/master/design_docs/db_schema.md)
 
 ### Implementation Timeline
 
