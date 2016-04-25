@@ -5,55 +5,99 @@ TODO: add Heroku link
 ### Minimum Viable Product
 
 Stumblr is a web application influenced by Tumblr, allowing users to share and interact with blog posts of various media types. Built using Ruby on Rails and React.js, it will include these minimum features:
-- Account creation, user login, and demo login
-- Seed data to illustrate the app's features
-- Posting of text, photos, links, audio, and video
-- Interaction with other users' posts (liking and reblogging)
-- Post tagging and search by tags
-- Bug-free
-- Hosted on Heroku
-- Styled and interactive (user action feedback)
-- Production readme (to replace this readme)
+- [ ] Account creation, user login, and demo login
+- [ ] Seed data to illustrate the app's features
+- [ ] Posting of text, photos, links, audio, and video
+- [ ] Interaction with other users' posts (liking and reblogging)
+- [ ] Post tagging and search by tags
+- [ ] Bug-free
+- [ ] Hosted on Heroku
+- [ ] Styled and interactive (user action feedback)
+- [ ] Production readme (to replace this readme)
 
 ### Wireframes
 
-You should also link to a page containing wireframes of the views essential for
-your MVP. Each wireframe should be a basic representation of the layout and
-information presented in the view. If you plan to use nested React components,
-clearly indicate the heirarchy in your wireframes. We should be able to "click"
-through your website using your wireframes. In addition to the view wireframes,
-you should diagram a tree indicating your application's overall component structure.
-See the sample project proposal for an example of this. 
 
-**NB**: You can use any tool you like to create your wireframes (pen and paper
-are completely acceptable). To spare your eyes from my chicken scratches, I made
-the sample proposal wireframes using [draw.io][draw.io].
-
-[draw.io]: https://www.draw.io/
 
 ### DB Schema
 
-Link to a document outlining the database schema for your app. Build up the
-schema by walking through your app's wireframes. Think carefully about what data
-will be needed for each view and the best way to store that data. Make note
-of any database-level validations and foreign key relationships.
+
 
 ### Implementation Timeline
 
-This will be the road map for your application. Rather than building the
-entire project all at once, you're going to implement one feature at a time.
-Refer back to your MVP and group the features into logical phases. You
-should have a working app at the end of each phase (even if not all of your
-features are in yet). For each phase, write a brief game plan and list out any
-third-party APIs, front-end and back-end components you will need to implement.
+### Phase 1: Backend setup and User Authentication (0.5 days)
+
+**Objective:** Functioning rails project with Authentication
+
+- [ ] create new project
+- [ ] create `User` model
+- [ ] authentication
+- [ ] user signup/signin pages
+- [ ] blank landing page after signin
+
+### Phase 2: Posts Model, API, and APIUtil (1.5 days)
+
+**Objective:** Posts can be created, read, edited and destroyed through
+the API.
+
+- [ ] create `Post` model
+- [ ] seed the database
+- [ ] CRUD API for notes (`PostsController`)
+- [ ] jBuilder views for notes
+- [ ] setup `APIUtil` to interact with the API
+- [ ] file hosting of some kind (lightning talk on this to come?)
+
+### Phase 3: Flux Architecture and Router (1.5 days)
+
+**Objective:** Posts can be created, read, edited and destroyed with the
+user interface.
+
+- [ ] setup the flux loop with skeleton files
+- [ ] setup React Router
+- implement each post component, building out the flux loop as needed.
+  - [ ] `PostsGenerator`
+  - [ ] `PostsFeed`
+  - [ ] `PostsFeedItem`
+  - [ ] `PostForm`
+  - [ ] `PostsNote`
+- [ ] work out differentiation between content types in forms, creation, and display
+- [ ] infinite scroll
+
+### Phase 4: Taggings and Search (1.5 days)
+
+**Objective:** Posts can be given multiple tags, which can be used to search posts.
+
+- [ ] create `Tagging` model
+- [ ] seed database with tag data
+- [ ] build out API, Flux loop, and components for:
+  - [ ] adding tags to post
+  - [ ] updating tags on post (additional tags or deleting tags)
+- [ ] create `SearchInput` and `SearchFeed` components
+
+### Phase 7: Likes, Reblogging, and Notes (1 day)
+
+**objective:** Users can repost other users' posts.
+
+- [ ] build out `notes` model
+- [ ] seed database with notes data
+- [ ] CRUD API for notes
+- [ ] user interface for CRUD
+
+### Phase 8: Blog Feed (1 day)
+
+**objective:** Users each have their own templated feed of posts.
+
+- [ ]
+
+### Phase 9: Clean-up (2 days)
+
+**objective** Finish up any remaining unfinished pieces and make improvements as time allows.
+
+- [ ] Walk through check-lists for every feature and finish/fix any remaining issues
+- [ ] Clean up and/or improve styling
+- [ ] Move on to bonus features if time allows
 
 ## Bonus Features
 
-
-## Submission
-
-When you've finished setting up your capstone project repo, add it to Progress
-Tracker and email your instructors (instructors-sf@appacademy.io or
-instructors-ny@appacademy.io).  A TA will review each proposal and leave
-their comments in issues on the project repo. Be prepared to respond to
-feedback, and keep your README up to date as you make progress. Happy hunting!
+- Push notifications
+- Multiple photos per photo post
