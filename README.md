@@ -15,19 +15,18 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 - [ ] Styled and interactive (user action feedback)
 - [ ] Production readme (to replace this readme)
 
-### Wireframes
+### Wireframes and Other Design Docs
 
-
-
-### DB Schema
-
-
+[https://github.com/quinnleong/stumblr/blob/master/design_docs/wireframes](Wireframes folder)
+[https://github.com/quinnleong/stumblr/blob/master/design_docs/flux_cycles.md](Flux Cycles)
+[https://github.com/quinnleong/stumblr/blob/master/design_docs/api_endpoints.md](API Endpoints)
+[https://github.com/quinnleong/stumblr/blob/master/design_docs/db_schema.md](DB Schema)
 
 ### Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
+### Phase 1: Backend Setup and User Authentication (0.5 days)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Setup functioning rails project with authentication.
 
 - [ ] create new project
 - [ ] create `User` model
@@ -42,8 +41,8 @@ the API.
 
 - [ ] create `Post` model
 - [ ] seed the database
-- [ ] CRUD API for notes (`PostsController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for posts (`PostsController`)
+- [ ] jBuilder views for posts
 - [ ] setup `APIUtil` to interact with the API
 - [ ] file hosting of some kind (lightning talk on this to come?)
 
@@ -74,9 +73,9 @@ user interface.
   - [ ] updating tags on post (additional tags or deleting tags)
 - [ ] create `SearchInput` and `SearchFeed` components
 
-### Phase 7: Likes, Reblogging, and Notes (1 day)
+### Phase 7: Likes, Reblogs, and Notes (1 day)
 
-**objective:** Users can repost other users' posts.
+**objective:** Users can like and repost other users' posts, and this adds notes to those posts.
 
 - [ ] build out `notes` model
 - [ ] seed database with notes data
@@ -87,7 +86,8 @@ user interface.
 
 **objective:** Users each have their own templated feed of posts.
 
-- [ ]
+- [ ] build out `BlogFeed` and `BlogFeedItem` components
+- [ ] style as grid and with different theme than homepage/main app
 
 ### Phase 9: Clean-up (2 days)
 
