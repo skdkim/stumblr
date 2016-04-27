@@ -1,10 +1,10 @@
 var React = require('react');
 
-var PostFeed = React.createClass({
+var PostForm = React.createClass({
  	render: function () {
  		return(
  			<div>
- 				POST FEED WHAT'S UP
+ 				POST FORM WILL GO HERE
  				{this.props.children}
  			</div>
  		);
@@ -13,4 +13,4 @@ var PostFeed = React.createClass({
 
 
 
- module.exports = PostFeed;
+ module.exports = PostForm;

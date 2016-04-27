@@ -4,7 +4,7 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key, indexed
-type        | string    | not null
+postType        | string    | not null
 title       | string    |
 body        | text      |
 content_id  | integer   | foreign key (references contents)

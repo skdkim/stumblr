@@ -1,4 +1,4 @@
-var PostApiUtil = require('../util/userApiUtil.js');
+var PostApiUtil = require('../../util/postsApiUtil.js');
 
 // TODO: change api calls to correct methods
 module.exports = {

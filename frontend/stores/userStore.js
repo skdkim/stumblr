@@ -3,7 +3,7 @@ var UserConstants = require('../constants/userConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var _currentUser;
-var _authErrors;
+var _authErrors = [];
 
 var UserStore = new Store(Dispatcher);
 
@@ -28,6 +28,7 @@ var updateErrors = function(errors) {
 };
 
 UserStore.__onDispatch = function(payload) {
+  // debugger
   switch (payload.actionType) {
     case UserConstants.LOGIN:
       addUser(payload.user);

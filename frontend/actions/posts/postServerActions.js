@@ -1,5 +1,5 @@
 var PostApiUtil = require('../../util/userApiUtil.js');
-var PostConstants = require('../../constants/userConstants');
+var PostConstants = require('../../constants/postConstants');
 var Dispatcher = require('../../dispatcher/dispatcher');
 
  module.exports = {

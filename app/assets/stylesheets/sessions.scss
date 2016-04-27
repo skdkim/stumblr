@@ -1,3 +1,14 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.auth-form {
+  background-color: limegreen;
+  width: 250px;
+}
+
+.auth-input {
+  display: block;
+  width: 250px;
+  height: 40px;
+}

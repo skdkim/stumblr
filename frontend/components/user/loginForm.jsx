@@ -54,7 +54,7 @@ var LoginForm = React.createClass({
     } else {
       return(
         <div>
-          <form onSubmit={this.handleSubmit}>
+          <form className="auth-form" onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.username}
               placeholder="username" onChange={this.updateUsername} />
 

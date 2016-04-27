@@ -9,11 +9,15 @@ var CurrentUserStateMixin = {
     };
   },
 
-  componentDidMount: function() {
-    UserStore.addListener(this.updateUser);
+  componentWillMount: function() {
+    this.userListener = UserStore.addListener(this.updateUser);
     if (!this.state.currentUser) {
       UserClientActions.fetchCurrentUser();
     }
+  },
+
+  componentWillUnmount: function() {
+    delete this.userListener;
   },
 
   updateUser: function() {

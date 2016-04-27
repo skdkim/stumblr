@@ -10,7 +10,7 @@ var SignUpForm = React.createClass({
   getInitialState: function() {
     return {
       username: "",
-      password: ""
+      password: "",
     };
   },
 
@@ -45,7 +45,23 @@ var SignUpForm = React.createClass({
     hashHistory.push('/login');
   },
 
+  errors: function() {
+    return (
+      <div>
+        {this.state.authErrors.map(function(error){
+          return <div>{error}</div>;
+        })}
+      </div>
+    );
+  },
+
  	render: function () {
+
+    var errors;
+    if (this.state.authErrors.length > 0) {
+      errors = this.errors();
+    }
+
     if (this.state.currentUser) {
       return(
         <div>
@@ -56,14 +72,16 @@ var SignUpForm = React.createClass({
     } else {
       return(
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.username}
+          <form className="auth-form" onSubmit={this.handleSubmit}>
+            {errors}
+
+            <input className="auth-input" type="text" value={this.state.username}
               placeholder="username" onChange={this.updateUsername} />
 
-            <input type="text" value={this.state.password}
+            <input className="auth-input" type="text" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />
 
-            <input type="submit" value="Sign Up"/>
+            <input className="auth-input" type="submit" value="Sign Up"/>
           </form>
         </div>
       );

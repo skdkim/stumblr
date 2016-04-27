@@ -13,7 +13,8 @@ class Api::SessionsController < ApplicationController
       render 'api/users/show'
     else
        @errors = ["Invalid username/password"]
-      render 'api/shared/errors', status: 404
+      render 'api/shared/errors'
+      # TODO: add error code
     end
   end
 
@@ -29,7 +30,7 @@ class Api::SessionsController < ApplicationController
       render 'api/users/show'
     else
       # TODO: different status code for error
-      @errors = nil
+      @errors = ["No current user"]
       render 'api/shared/errors', status: 404
     end
   end

@@ -115,433 +115,433 @@ Post.create(
 Post.create(
   postType: "photo",
   title: "Comet Coffee",
-  content_id: # TODO: change link to photo id: https://c2.staticflickr.com/6/5714/23833989690_fa4a80c0e7_c.jpg,
-  content_postType: "photo",
+  # content_id: # TODO: change link to photo id: https://c2.staticflickr.com/6/5714/23833989690_fa4a80c0e7_c.jpg,
+  content_type: "photo",
   author_id: 4
 )
 
 Post.create(
   postType: "link",
   title: "Chani Nicholas: Horoscopes for April 25",
-  content_id: # TODO: add id for link: http://chaninicholas.com/2016/04/mercury-stations-retrograde-horoscopes-for-the-week-of-april-25th/,
-  content_postType: "link",
+  # content_id: # TODO: add id for link: http://chaninicholas.com/2016/04/mercury-stations-retrograde-horoscopes-for-the-week-of-april-25th/,
+  content_type: "link",
   author_id: 4
 )
 
 Post.create(
   postType: "audio",
   body: "The Weight of Things - Jeff Pianki",
-  content_id: # TODO: add id for mp3,
-  content_postType: "audio",
+  # content_id: # TODO: add id for mp3,
+  content_type: "audio",
   author_id: 4
 )
 
-Post.create(
-  postType: "photo",
-  content_id: # TODO: add id for photo: https://c1.staticflickr.com/1/353/20071999428_504e5a5ca2_c.jpg,
-  content_postType: "photo",
-  author_id: 4
-)
-
-Post.create(
-postType: photo,
-content_id: # TODO: change to photo id: https://c2.staticflickr.com/6/5611/15394468677_0278ee41e4_c.jpg,
-content_postType: "photo",
-author_id: 2
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
-
-Post.create(
-  postType: ,
-  title: ,
-  body: ,
-  content_id: ,
-  content_postType: ,
-  author_id:
-)
+# Post.create(
+#   postType: "photo",
+#   # content_id: # TODO: add id for photo: https://c1.staticflickr.com/1/353/20071999428_504e5a5ca2_c.jpg,
+#   content_type: "photo",
+#   author_id: 4
+# )
+#
+# Post.create(
+# postType: "photo",
+# # content_id: # TODO: change to photo id: https://c2.staticflickr.com/6/5611/15394468677_0278ee41e4_c.jpg,
+# content_type: "photo",
+# author_id: 2
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )
+#
+# Post.create(
+#   postType: ,
+#   title: ,
+#   body: ,
+#   content_id: ,
+#   content_type: ,
+#   author_id:
+# )

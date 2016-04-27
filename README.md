@@ -1,6 +1,7 @@
 ### Heroku Link
 
-TODO: add Heroku link
+[Stumblr](http://stumblr-.herokuapp.com/)
+(Don't worry I'm going to change this weird dash url to an actual domain name)
 
 ### Minimum Viable Product
 
@@ -43,7 +44,7 @@ the API.
 - [X] create `Post` model
 - [ ] seed the database
 - [ ] CRUD API for posts (`PostsController`)
-- [ ] jBuilder views for posts
+- [X] jBuilder views for posts
 - [ ] setup `APIUtil` to interact with the API
 - [ ] file hosting of some kind (lightning talk on this to come?)
 

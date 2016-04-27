@@ -25,7 +25,7 @@ var Dispatcher = require('../../dispatcher/dispatcher');
 
    handleError: function(error) {
      Dispatcher.dispatch({
-       actionType: UserConstants.ERROR,
+       actionType: UserConstants.ERRORS,
        errors: error.responseJSON.errors
      });
    }

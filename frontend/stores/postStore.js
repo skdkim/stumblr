@@ -13,13 +13,10 @@ var resetPosts = function(posts) {
   posts.forEach(function(post) {
     _posts[post.id] = post;
   });
-
-  this.__emitChange();
 };
 
 var addPost = function(post) {
   _posts[post.id] = post;
-  this.__emitChange();
 };
 
 var removePost = function(post) {
@@ -28,6 +25,16 @@ var removePost = function(post) {
 
 var updateErrors = function(errors) {
   _postErrors = errors;
+};
+
+PostStore.all = function() {
+  return Object.keys(_posts).map(function(id){
+    return _posts[id];
+  });
+};
+
+PostStore.find = function(id) {
+  return _posts[id];
 };
 
 PostStore.__onDispatch = function(payload) {
@@ -45,6 +52,7 @@ PostStore.__onDispatch = function(payload) {
       updateErrors(payload.errors);
       break;
   }
+  this.__emitChange();
 };
 
 module.exports = PostStore;

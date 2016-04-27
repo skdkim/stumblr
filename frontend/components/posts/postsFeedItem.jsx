@@ -1,16 +1,15 @@
 var React = require('react');
 
-var Post = React.createClass({
+var PostFeedItem = React.createClass({
  	render: function () {
  		return(
  			<div>
  				This is a POST!
- 				{this.props.children}
  			</div>
  		);
  	}
  });
 
+// TODO: add PostNotes to render method
 
-
- module.exports = Post;
+ module.exports = PostFeedItem;

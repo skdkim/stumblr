@@ -1,4 +1,4 @@
-var PostsServerActions = require('../actions/postsServerActions.js');
+var PostServerActions = require('../actions/posts/postServerActions.js');
 
 module.exports = {
   fetchPosts: function() {
@@ -6,10 +6,10 @@ module.exports = {
       method: 'GET',
       url: 'api/posts',
       success: function(posts) {
-        PostsServerActions.receivePosts(posts);
+        PostServerActions.receivePosts(posts);
       },
       error: function(error) {
-        PostsServerActions.handleError(error);
+        PostServerActions.handleError(error);
       }
     });
   },
@@ -19,10 +19,10 @@ module.exports = {
       method: 'GET',
       url: 'api/posts/' + postId,
       success: function(post) {
-        PostsServerActions.receivePost(post);
+        PostServerActions.receivePost(post);
       },
       error: function(error) {
-        PostsServerActions.handleError(error);
+        PostServerActions.handleError(error);
       }
     });
   },
@@ -33,10 +33,10 @@ module.exports = {
       url: 'api/posts',
       data: {post: post},
       success: function(newPost) {
-        PostsServerActions.receivePost(post);
+        PostServerActions.receivePost(post);
       },
       error: function(error) {
-        PostsServerActions.handleError(error);
+        PostServerActions.handleError(error);
       }
     });
   },
@@ -51,10 +51,10 @@ module.exports = {
         content_id: post.content_id,
       }},
       success: function(updatedPost) {
-        PostsServerActions.receivePost(post);
+        PostServerActions.receivePost(post);
       },
       error: function(error) {
-        PostsServerActions.handleError(error);
+        PostServerActions.handleError(error);
       }
     });
   },
@@ -64,10 +64,10 @@ module.exports = {
       method: 'DELETE',
       url: 'api/posts',
       success: function(post) {
-        PostsServerActions.removePost(post);
+        PostServerActions.removePost(post);
       },
       error: function(error) {
-        PostsServerActions.handleError(error);
+        PostServerActions.handleError(error);
       }
     });
   }
