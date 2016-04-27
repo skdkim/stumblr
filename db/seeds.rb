@@ -85,3 +85,463 @@ User.create(
   password_digest: BCrypt::Password.create('quashie'),
   session_token: SecureRandom.urlsafe_base64(16)
 )
+
+
+
+
+Post.create(
+  postType: "text",
+  title: "\'Note\' by W.S. Merwin",
+  body: "Remember how the naked soul\n
+          comes to language and at once knows\n
+          loss and distance and believing\n
+
+          then for a time it will not run\n
+          with its old freedom\n
+          like a light innocent of measure\n
+          but will hearken to how\n
+          one story becomes another\n
+          and will try to hear where\n
+          they have emerged from\n
+          and where they are heading\n
+          as though they were its own legend\n
+          running before the words and beyond them\n
+          naked and never looking back\n
+
+          through the noise of questions",
+  author_id: 4
+)
+
+Post.create(
+  postType: "photo",
+  title: "Comet Coffee",
+  content_id: # TODO: change link to photo id: https://c2.staticflickr.com/6/5714/23833989690_fa4a80c0e7_c.jpg,
+  content_postType: "photo",
+  author_id: 4
+)
+
+Post.create(
+  postType: "link",
+  title: "Chani Nicholas: Horoscopes for April 25",
+  content_id: # TODO: add id for link: http://chaninicholas.com/2016/04/mercury-stations-retrograde-horoscopes-for-the-week-of-april-25th/,
+  content_postType: "link",
+  author_id: 4
+)
+
+Post.create(
+  postType: "audio",
+  body: "The Weight of Things - Jeff Pianki",
+  content_id: # TODO: add id for mp3,
+  content_postType: "audio",
+  author_id: 4
+)
+
+Post.create(
+  postType: "photo",
+  content_id: # TODO: add id for photo: https://c1.staticflickr.com/1/353/20071999428_504e5a5ca2_c.jpg,
+  content_postType: "photo",
+  author_id: 4
+)
+
+Post.create(
+postType: photo,
+content_id: # TODO: change to photo id: https://c2.staticflickr.com/6/5611/15394468677_0278ee41e4_c.jpg,
+content_postType: "photo",
+author_id: 2
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)
+
+Post.create(
+  postType: ,
+  title: ,
+  body: ,
+  content_id: ,
+  content_postType: ,
+  author_id:
+)

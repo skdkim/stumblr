@@ -29,18 +29,18 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 
 **Objective:** Setup functioning rails project with authentication.
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [X] create new project
+- [X] create `User` model
+- [X] authentication
+- [X] user signup/signin pages
+- [X] blank landing page after signin
 
 ### Phase 2: Posts Model, API, and APIUtil (1.5 days)
 
 **Objective:** Posts can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Post` model
+- [X] create `Post` model
 - [ ] seed the database
 - [ ] CRUD API for posts (`PostsController`)
 - [ ] jBuilder views for posts
