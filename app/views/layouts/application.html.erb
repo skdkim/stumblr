@@ -7,10 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if signed_in? %>
-  <p>Logged in as <%= current_user.username %></p>
-  <%= button_to "Log Out", api_sessions_url, method: :delete %>
-<% end %>
 
 <%= yield %>
 

@@ -1,7 +1,12 @@
 var React = require('react');
 var UserClientActions = require('../../actions/user/userClientActions');
+var UserStore = require('../../stores/userStore');
+var CurrentUserStateMixin = require('../../mixins/currentUserState');
+var hashHistory = require('react-router').hashHistory;
 
 var SignUpForm = React.createClass({
+  mixins: [CurrentUserStateMixin],
+
   getInitialState: function() {
     return {
       username: "",
@@ -35,22 +40,34 @@ var SignUpForm = React.createClass({
     });
   },
 
+  logout: function(e) {
+    UserClientActions.logout();
+    hashHistory.push('/login');
+  },
+
  	render: function () {
- 		return(
- 			<div>
- 				<form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input type="text" value={this.state.username} onChange={this.updateUsername} />
-          </label>
+    if (this.state.currentUser) {
+      return(
+        <div>
+          Hello, {this.state.currentUser.username}!
+          <button onClick={this.logout}>Log Out</button>
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" value={this.state.username}
+              placeholder="username" onChange={this.updateUsername} />
 
-          <label>Password
-            <input type="text" value={this.state.password} onChange={this.updatePassword} />
-          </label>
+            <input type="text" value={this.state.password}
+              placeholder="password" onChange={this.updatePassword} />
 
-          <input type="submit" value="Sign Up"/>
- 				</form>
- 			</div>
- 		);
+            <input type="submit" value="Sign Up"/>
+          </form>
+        </div>
+      );
+    }
  	}
  });
 

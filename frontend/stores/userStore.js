@@ -1,4 +1,4 @@
-var Store = require('react').Store;
+var Store = require('flux/utils').Store;
 var UserConstants = require('../constants/userConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
@@ -7,9 +7,16 @@ var _authErrors;
 
 var UserStore = new Store(Dispatcher);
 
+UserStore.currentUser = function() {
+  return _currentUser;
+};
+
+UserStore.authErrors = function() {
+  return _authErrors;
+};
+
 var addUser = function(user) {
   _currentUser = user;
-  this.__emitChange();
 };
 
 var removeUser = function() {
@@ -32,6 +39,7 @@ UserStore.__onDispatch = function(payload) {
       updateErrors(payload.errors);
       break;
   }
+  this.__emitChange();
 };
 
 module.exports = UserStore;

@@ -1,4 +1,4 @@
-var Store = require('react').Store;
+var Store = require('flux/utils').Store;
 var PostConstants = require('../constants/postConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 

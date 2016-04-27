@@ -18,6 +18,7 @@ module.exports = {
     $.ajax({
       method: 'POST',
       url: 'api/session',
+      data: {user: {username: user.username, password: user.password}},
       success: function(loggedInUser) {
         UserServerActions.receiveCurrentUser(loggedInUser);
       },
