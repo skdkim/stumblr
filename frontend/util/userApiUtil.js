@@ -6,8 +6,6 @@ module.exports = {
       method: 'GET',
       url: 'api/session',
       success: function(user) {
-        debugger
-        
         UserServerActions.receiveCurrentUser(user);
       },
       error: function(error) {

@@ -49,7 +49,7 @@ var SignUpForm = React.createClass({
     return (
       <div>
         {this.state.authErrors.map(function(error){
-          return <div>{error}</div>;
+          return <div key={error.id}>{error}</div>;
         })}
       </div>
     );
@@ -78,7 +78,7 @@ var SignUpForm = React.createClass({
             <input className="auth-input" type="text" value={this.state.username}
               placeholder="username" onChange={this.updateUsername} />
 
-            <input className="auth-input" type="text" value={this.state.password}
+            <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />
 
             <input className="auth-input" type="submit" value="Sign Up"/>

@@ -43,7 +43,22 @@ var LoginForm = React.createClass({
     UserClientActions.logout();
   },
 
+  errors: function() {
+    return (
+      <div>
+        {this.state.authErrors.map(function(error){
+          return <div key={error}>{error}</div>;
+        })}
+      </div>
+    );
+  },
+
  	render: function () {
+    var errors;
+    if (this.state.authErrors.length > 0) {
+      errors = this.errors();
+    }
+
     if (this.state.currentUser) {
       return(
         <div>
@@ -55,13 +70,15 @@ var LoginForm = React.createClass({
       return(
         <div>
           <form className="auth-form" onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.username}
+            {errors}
+
+            <input className="auth-input" type="text" value={this.state.username}
               placeholder="username" onChange={this.updateUsername} />
 
-            <input type="text" value={this.state.password}
+            <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />
 
-            <input type="submit" value="Log In"/>
+            <input className="auth-input submit" type="submit" value="Log In"/>
           </form>
         </div>
       );
