@@ -11,14 +11,16 @@ var React = require('react');
  var SignUpForm = require('./components/user/signUpForm');
  var PostForm = require('./components/posts/postForm');
  var PostsFeed = require('./components/posts/postsFeed');
- var PostsFeedItem = require('./components/posts/PostsFeedItem');
+ var PostsFeedItem = require('./components/posts/postsFeedItem');
+ var SearchFeed = require('./components/search/searchFeed');
 
  var routes = (
  	<Route path='/' component={App}>
-    // <IndexRoute component={Landing}>
-    // </IndexRoute>
+    <IndexRoute component={Landing}></IndexRoute>
     <Route path='signup' component={SignUpForm}></Route>
     <Route path='login' component={LoginForm}></Route>
+
+    <Route path='explore' component={SearchFeed}></Route>
 
     <Route path='posts' component={PostsFeed}>
       // TODO: post form as always-child of postsfeed

@@ -17,7 +17,7 @@ var CurrentUserStateMixin = {
   },
 
   componentWillUnmount: function() {
-    delete this.userListener;
+    this.userListener.remove();
   },
 
   updateUser: function() {

@@ -81,7 +81,7 @@ var SignUpForm = React.createClass({
             <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />
 
-            <input className="auth-input" type="submit" value="Sign Up"/>
+            <input className="auth-input submit" type="submit" value="Sign Up"/>
           </form>
         </div>
       );

@@ -75,7 +75,7 @@ user interface.
   - [ ] updating tags on post (additional tags or deleting tags)
 - [ ] create `SearchInput` and `SearchFeed` components
 
-### Phase 7: Likes, Reblogs, and Notes (1 day)
+### Phase 7: Likes, Reblogs, and Notes (2 days)
 
 **objective:** Users can like and repost other users' posts, and this adds notes to those posts.
 
