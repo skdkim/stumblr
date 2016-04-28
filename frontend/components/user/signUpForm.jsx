@@ -2,7 +2,7 @@ var React = require('react');
 var UserClientActions = require('../../actions/user/userClientActions');
 var UserStore = require('../../stores/userStore');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
-var hashHistory = require('react-router').hashHistory;
+var HashHistory = require('react-router').hashHistory;
 
 var SignUpForm = React.createClass({
   mixins: [CurrentUserStateMixin],
@@ -12,6 +12,20 @@ var SignUpForm = React.createClass({
       username: "",
       password: "",
     };
+  },
+
+  componentDidMount: function() {
+    this.listener = UserStore.addListener(this.pushToDash);
+  },
+
+  componentWillUnmount: function() {
+    this.listener.remove();
+  },
+
+  pushToDash: function() {
+    if (UserStore.currentUser()) {
+      HashHistory.push('/dashboard');
+    }
   },
 
   updateUsername: function(e) {
@@ -42,7 +56,7 @@ var SignUpForm = React.createClass({
 
   logout: function(e) {
     UserClientActions.logout();
-    hashHistory.push('/login');
+    HashHistory.push('/login');
   },
 
   errors: function() {
@@ -71,8 +85,8 @@ var SignUpForm = React.createClass({
       );
     } else {
       return(
-        <div>
-          <form className="auth-form" onSubmit={this.handleSubmit}>
+        <div className="landing-container">
+          <form onSubmit={this.handleSubmit}>
             {errors}
 
             <input className="auth-input" type="text" value={this.state.username}

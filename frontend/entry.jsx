@@ -4,15 +4,23 @@ var React = require('react');
  var Route = require('react-router').Route;
  var IndexRoute = require('react-router').IndexRoute;
  var HashHistory = require('react-router').hashHistory;
+ var UserStore = require('./stores/userStore');
 
  var App = require('./components/app.jsx');
  var Landing = require('./components/user/landing.jsx');
  var LoginForm = require('./components/user/loginForm');
  var SignUpForm = require('./components/user/signUpForm');
- var PostForm = require('./components/posts/postForm');
+ // var PostForm = require('./components/posts/postForm');
  var PostsFeed = require('./components/posts/postsFeed');
  var PostsFeedItem = require('./components/posts/postsFeedItem');
  var SearchFeed = require('./components/search/searchFeed');
+
+
+ var requireAnonymous = function() {
+   if (UserStore.currentUser()) {
+     HashHistory.push('/dashboard');
+   }
+ };
 
  var routes = (
  	<Route path='/' component={App}>
@@ -22,7 +30,7 @@ var React = require('react');
 
     <Route path='explore' component={SearchFeed}></Route>
 
-    <Route path='posts' component={PostsFeed}>
+    <Route path='dashboard' component={PostsFeed}>
       // TODO: post form as always-child of postsfeed
       // TODO: postfeeditem as always-child of postsfeed
    	</Route>

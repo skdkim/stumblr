@@ -1,6 +1,7 @@
 ## Questions
 
 - why getting `setState` before component mounted error for sign-up but not login?
+  - forgot to remove listener before component unmount
 - ~~why aren't `id`s coming through with `fetchPosts` / `PostStore.all`?~~
   - because I forgot to include it in the JSON/jbuilder view!
 - ~~different forms for each type of post OR one form component that changes based on the type of post?~~

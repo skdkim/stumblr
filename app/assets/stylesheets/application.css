@@ -18,7 +18,9 @@
    font-family: 'Cabin', sans-serif;
  }
 
-html, body {
+html, body, .app, #root {
   height: 100%;
   width: 100%;
+  /* TODO: remove this background color; only for testing */
+  background-color: mistyrose;
 }

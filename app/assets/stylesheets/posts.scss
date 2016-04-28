@@ -6,3 +6,31 @@
 dashboard {
   background-color: #36465d;
 }
+
+.post {
+  display: flex;
+  width: 500px;
+  height: auto;
+  background-color: lightsalmon;
+  border-radius: 3px;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.post-bar {
+  background-color: white;
+  height: 45px;
+}
+
+.post-content {
+  align-content: space-between;
+}
+
+.author {
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
+.title {
+  justify-content: center;
+}

@@ -3,39 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.auth-form {
-  width: 250px;
-}
 
 .auth-input {
   display: block;
-  width: 250px;
-  height: 40px;
+  width: 300px;
+  height: 45px;
   border: 1px solid gray;
-  border-radius: 7px;
+  border-radius: 3px;
   font-size: 15px;
+  margin: 2px;
 }
 
 .auth-input.submit {
-  margin: 10px 0px 0px 0px;
+  margin: 10px 2px 2px 2px;
 }
 
 
 
 
 
-.page-container {
+.landing-container {
   width: 100%;
   height: 100%;
-  background-color: lightyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .landing-button {
   display: block;
-  width: 250px;
-  height: 40px;
+  width: 300px;
+  height: 45px;
   border: 1px solid gray;
-  border-radius: 7px;
+  border-radius: 3px;
   background-color: lightblue;
   font-size: 15px;
+  margin: 2px;
+}
+
+.landing-container > p {
+  margin-top: 30px;
 }
