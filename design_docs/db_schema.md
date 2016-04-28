@@ -38,9 +38,15 @@ author_id   | integer   | not null, foreign key (references users), indexed
 post_id     | integer   | not null, foreign key (references posts), indexed
 note_type   | string    | not null
 
-## taggings
+## tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 tag         | string    | not null
+
+## taggings
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+tag_id      | string    | not null, foreign key (references tags), indexed, unique [post_id]
 post_id     | integer   | not null, foreign key (references posts), indexed, unique [tag_id]

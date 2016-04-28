@@ -15,12 +15,12 @@
  */
 
  * {
-   font-family: 'Cabin', sans-serif;
+   font-family: 'Open Sans', sans-serif;
  }
 
 html, body, .app, #root {
   height: 100%;
   width: 100%;
   /* TODO: remove this background color; only for testing */
-  background-color: mistyrose;
+  background-color: #36465d;
 }
