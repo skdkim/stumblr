@@ -8,6 +8,7 @@
   - changed from `onEnter` hooks to function calls when component mounts; the `onEnter` hooks were immediately pushing away while the asynchronous user fetch was still happening (on refresh)
 - how to make/add tags when submitted with posts; where should the new tag be created, if necessary? what about the tagging?
 - how to make page autofocus on form (html tag doesn't seem to work)
+- how to iterate through background image urls and interpolate into CSS
 
 ## In Progress
 

@@ -23,8 +23,3 @@ html, body, .app, #root {
   width: 100%;
   background-color: #36465d;
 }
-
-.app {
-  background-image: url(http://res.cloudinary.com/dn07p1frq/image/upload/v1461887799/photo-1434871619871-1f315a50efba_d6kjsj.jpg);
-  background-size: 100% 100%;
-}
