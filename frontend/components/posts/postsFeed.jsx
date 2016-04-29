@@ -2,6 +2,7 @@ var React = require('react');
 var PostStore = require('../../stores/postStore');
 var UserStore = require('../../stores/userStore');
 var PostsFeedItem = require('./postsFeedItem');
+var PostsGenerator = require('./postsGenerator');
 var PostClientActions = require('../../actions/posts/postClientActions');
 var UserClientActions = require('../../actions/user/userClientActions');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
@@ -39,10 +40,6 @@ var PostsFeed = React.createClass({
     });
   },
 
-  newTextPost: function() {
-    HashHistory.push('/textform');
-  },
-
   logout: function(e) {
     UserClientActions.logout();
   },
@@ -55,11 +52,13 @@ var PostsFeed = React.createClass({
           <div className="navbar">
             Hello, {this.state.currentUser.username}!
             <button onClick={this.logout}>Log Out</button>
-            <button onClick={this.newTextPost}>Add Text Post</button>
           </div>
+
+
           <div className="feed">
-            POSTS FEED:
-            {posts.map(function(post){
+            <PostsGenerator />
+
+            {posts.reverse().map(function(post){
               return <PostsFeedItem key={post.id} post={post}/>;
             })}
           </div>

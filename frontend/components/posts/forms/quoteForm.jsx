@@ -3,7 +3,7 @@ var PostClientActions = require('../../../actions/posts/postClientActions');
 var PostStore = require('../../../stores/postStore');
 var HashHistory = require('react-router').hashHistory;
 
-var PhotoForm = React.createClass({
+var QuoteForm = React.createClass({
   getInitialState: function() {
     return {
       tags: []
@@ -20,6 +20,12 @@ var PhotoForm = React.createClass({
 
   pushToDash: function() {
     HashHistory.push('/dashboard');
+  },
+
+  updateTitle: function(e) {
+    this.setState({
+      title: e.target.value
+    });
   },
 
   updateBody: function(e) {
@@ -39,7 +45,7 @@ var PhotoForm = React.createClass({
 
     PostClientActions.createPost(
       {
-        post_type: "photo",
+        post_type: "quote",
         title: this.state.title,
         body: this.state.body,
         tags: this.state.tags
@@ -53,16 +59,14 @@ var PhotoForm = React.createClass({
     });
   },
 
-  render: function () {
-    return(
-      <div className="post-form-container">
+ 	render: function () {
+ 		return(
+ 			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
-
-
-
-
-          <input className="caption-input" type="textarea" value={this.state.body}
-            placeholder="Caption" onChange={this.updateBody}></input>
+          <input className="quote-input" type="textarea" value={this.state.title}
+            placeholder="&quot;Quote&quot;" onChange={this.updateTitle}></input>
+          <input className="quote-source-input" type="text" value={this.state.body}
+            placeholder="- Source" onChange={this.updateBody}></input>
           <input className="tags-input" type="text" value={this.state.tags}
             placeholder="#tags" onChange={this.updateTags}></input>
 
@@ -73,12 +77,11 @@ var PhotoForm = React.createClass({
               value="Post"></input>
           </div>
         </form>
-      </div>
-    );
-  }
+ 			</div>
+ 		);
+ 	}
  });
 
-// TODO: add photo upload link to cloudinary
 
 
- module.exports = PhotoForm;
+ module.exports = QuoteForm;

@@ -1,12 +1,14 @@
 ##Component Hierarchy
 
 - App
+  - Navbar
+  - SearchInput
   - PostsGenerator
+  - PostForm
   - PostsFeed
     - PostsFeedItem
       - PostNote
-      - PostForm
-  - SearchInput
+      - PostNav
   - SearchFeed
     - SearchFeedItem
   - BlogFeed

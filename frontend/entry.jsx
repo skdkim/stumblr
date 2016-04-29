@@ -16,6 +16,11 @@ var React = require('react');
  var SearchFeed = require('./components/search/searchFeed');
 
  var TextForm = require('./components/posts/forms/textForm');
+ var PhotoForm = require('./components/posts/forms/photoForm');
+ var QuoteForm = require('./components/posts/forms/quoteForm');
+ var LinkForm = require('./components/posts/forms/linkForm');
+ var AudioForm = require('./components/posts/forms/audioForm');
+ var VideoForm = require('./components/posts/forms/videoForm');
 
 
  var requireAnonymous = function() {
@@ -29,7 +34,12 @@ var React = require('react');
     <IndexRoute component={Landing}></IndexRoute>
     <Route path='signup' component={SignUpForm}></Route>
     <Route path='login' component={LoginForm}></Route>
-    <Route path='textform' component={TextForm}></Route>
+    <Route path='newtext' component={TextForm}></Route>
+    <Route path='newphoto' component={PhotoForm}></Route>
+    <Route path='newquote' component={QuoteForm}></Route>
+    <Route path='newlink' component={LinkForm}></Route>
+    <Route path='newaudio' component={AudioForm}></Route>
+    <Route path='newvideo' component={VideoForm}></Route>
     <Route path='explore' component={SearchFeed}></Route>
 
     <Route path='dashboard' component={PostsFeed}>
