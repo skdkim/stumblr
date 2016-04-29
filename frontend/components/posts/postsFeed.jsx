@@ -40,10 +40,6 @@ var PostsFeed = React.createClass({
     });
   },
 
-  logout: function(e) {
-    UserClientActions.logout();
-  },
-
  	render: function () {
     var posts = this.state.posts;
     if (this.state.currentUser){

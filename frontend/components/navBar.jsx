@@ -1,6 +1,7 @@
 var React = require('react');
 var SearchBar = require('./search/searchBar');
 var NavIconBar = require('./navIconBar');
+var UserClientActions = require('../actions/user/userClientActions');
 var CurrentUserStateMixin = require('../mixins/currentUserState');
 
 var NavBar = React.createClass({
@@ -17,6 +18,10 @@ var NavBar = React.createClass({
     } else {
       return <div>loading...</div>;
     }
+  },
+
+  logout: function(e) {
+    UserClientActions.logout();
   },
 
   render: function() {

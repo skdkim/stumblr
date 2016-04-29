@@ -12,6 +12,12 @@ var Landing = React.createClass({
   mixins: [CurrentUserStateMixin],
 
   componentWillMount: function() {
+    var imgUrl = BackgroundImageSource.returnImgSource();
+
+    this.divStyle = {
+      backgroundImage: 'url(' + imgUrl + ')',
+    };
+
     this.pushToDash();
   },
 
@@ -42,14 +48,9 @@ var Landing = React.createClass({
   },
 
   render: function() {
-    var imgUrl = BackgroundImageSource.returnImgSource();
-
-    var divStyle = {
-      backgroundImage: 'url(' + imgUrl + ')',
-    };
 
     return (
-      <div className="landing-container" style={divStyle}>
+      <div className="landing-container" style={this.divStyle}>
         <button className="landing-button" onClick={this.pushToSignUp}>Get Started</button>
         <button className="landing-button" onClick={this.pushToLogIn}>Log In</button>
         <p onClick={this.pushToPublicFeed}>Here's what's trending now</p>
