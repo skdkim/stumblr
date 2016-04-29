@@ -1,6 +1,5 @@
 var PostApiUtil = require('../../util/postsApiUtil.js');
 
-// TODO: change api calls to correct methods
 module.exports = {
   fetchPosts: function() {
     PostApiUtil.fetchPosts();

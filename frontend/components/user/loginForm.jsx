@@ -56,7 +56,7 @@ var LoginForm = React.createClass({
 
   errors: function() {
     return (
-      <div>
+      <div className="errors">
         {this.state.authErrors.map(function(error){
           return <div key={error}>{error}</div>;
         })}
@@ -76,7 +76,7 @@ var LoginForm = React.createClass({
             {errors}
 
             <input className="auth-input" type="text" value={this.state.username}
-              placeholder="username" onChange={this.updateUsername} />
+              placeholder="username" onChange={this.updateUsername} autofocus />
 
             <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />

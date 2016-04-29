@@ -15,6 +15,8 @@ var React = require('react');
  var PostsFeedItem = require('./components/posts/postsFeedItem');
  var SearchFeed = require('./components/search/searchFeed');
 
+ var TextForm = require('./components/posts/forms/textForm');
+
 
  var requireAnonymous = function() {
    if (UserStore.currentUser()) {
@@ -27,16 +29,17 @@ var React = require('react');
     <IndexRoute component={Landing}></IndexRoute>
     <Route path='signup' component={SignUpForm}></Route>
     <Route path='login' component={LoginForm}></Route>
-
+    <Route path='textform' component={TextForm}></Route>
     <Route path='explore' component={SearchFeed}></Route>
 
     <Route path='dashboard' component={PostsFeed}>
-      // TODO: post form as always-child of postsfeed
-      // TODO: postfeeditem as always-child of postsfeed
    	</Route>
   </Route>
-  // TODO: all of these(!) push to landing if not logged in; on enter hook
  );
+ // TODO: post form as always-child of postsfeed
+ // TODO: postfeeditem as always-child of postsfeed
+
+ // TODO: all of these(!) push to landing if not logged in; on enter hook
 
  document.addEventListener('DOMContentLoaded', function () {
  	ReactDOM.render(

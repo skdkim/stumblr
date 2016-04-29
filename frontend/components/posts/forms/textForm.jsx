@@ -1,12 +1,25 @@
 var React = require('react');
-
-var TagForm = require('./tagForm');
+var PostClientActions = require('../../../actions/posts/postClientActions');
+var PostStore = require('../../../stores/postStore');
+var HashHistory = require('react-router').hashHistory;
 
 var TextForm = React.createClass({
   getInitialState: function() {
     return {
       tags: []
     };
+  },
+
+  componentDidMount: function() {
+    this.postListener = PostStore.addListener(this.handlePostsChanged);
+  },
+
+  componentWillUnmount: function() {
+    this.postListener.remove();
+  },
+
+  handlePostsChanged: function() {
+    HashHistory.push('/dashboard');
   },
 
   updateTitle: function(e) {
@@ -22,11 +35,28 @@ var TextForm = React.createClass({
   },
 
   updateTags: function(e) {
-    if(e.target.value[-1] === "\n" || e.target.value[-1] === ", ") {
-      this.setState({
-        tags: this.state.tags.push(e.target.value)
-      });
-    }
+    this.setState({
+      tags: e.target.value
+    });
+  },
+
+  handleSubmit: function(e) {
+    e.preventDefault();
+
+    PostClientActions.createPost(
+      {
+        post_type: "text",
+        title: this.state.title,
+        body: this.state.body,
+        tags: this.state.tags
+      }
+    );
+
+    this.setState({
+      title: "",
+      body: "",
+      tags: ""
+    });
   },
 
  	render: function () {
@@ -37,7 +67,10 @@ var TextForm = React.createClass({
             placeholder="Title" onChange={this.updateTitle}></input>
           <input type="text" value={this.state.body}
             placeholder="Your text here" onChange={this.updateBody}></input>
-          <TagForm onChange={this.updateTags}/>
+          <input type="text" value={this.state.tags}
+            placeholder="#tags" onChange={this.updateTags}></input>
+
+          <input type="submit" value="Post!"></input>
         </form>
  			</div>
  		);

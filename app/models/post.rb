@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :postType, :author_id, presence: true
+  validates :post_type, :author_id, presence: true
   validates :title, presence: true, if: :body_and_content_id_null?
   validates :body, presence: true, if: :title_and_content_id_null?
   validates :content_id, presence: true, if: :body_and_title_null?

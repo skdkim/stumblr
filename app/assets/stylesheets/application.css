@@ -21,6 +21,10 @@
 html, body, .app, #root {
   height: 100%;
   width: 100%;
-  /* TODO: remove this background color; only for testing */
   background-color: #36465d;
+}
+
+.app {
+  background-image: url(http://res.cloudinary.com/dn07p1frq/image/upload/v1461887799/photo-1434871619871-1f315a50efba_d6kjsj.jpg);
+  background-size: 100% 100%;
 }
