@@ -39,6 +39,10 @@ var PostsFeed = React.createClass({
     });
   },
 
+  newTextPost: function() {
+    HashHistory.push('/textform');
+  },
+
   logout: function(e) {
     UserClientActions.logout();
   },
@@ -51,6 +55,7 @@ var PostsFeed = React.createClass({
           <div className="navbar">
             Hello, {this.state.currentUser.username}!
             <button onClick={this.logout}>Log Out</button>
+            <button onClick={this.newTextPost}>Add Text Post</button>
           </div>
           <div className="feed">
             POSTS FEED:
