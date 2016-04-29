@@ -90,7 +90,7 @@ User.create(
 
 
 Post.create(
-  postType: "text",
+  post_type: "text",
   title: "\'Note\' by W.S. Merwin",
   body: "Remember how the naked soul\n
           comes to language and at once knows\n
@@ -113,7 +113,7 @@ Post.create(
 )
 
 Post.create(
-  postType: "photo",
+  post_type: "photo",
   title: "Comet Coffee",
   # content_id: # TODO: change link to photo id: https://c2.staticflickr.com/6/5714/23833989690_fa4a80c0e7_c.jpg,
   content_type: "photo",
@@ -121,7 +121,7 @@ Post.create(
 )
 
 Post.create(
-  postType: "link",
+  post_type: "link",
   title: "Chani Nicholas: Horoscopes for April 25",
   # content_id: # TODO: add id for link: http://chaninicholas.com/2016/04/mercury-stations-retrograde-horoscopes-for-the-week-of-april-25th/,
   content_type: "link",
@@ -129,7 +129,7 @@ Post.create(
 )
 
 Post.create(
-  postType: "audio",
+  post_type: "audio",
   body: "The Weight of Things - Jeff Pianki",
   # content_id: # TODO: add id for mp3,
   content_type: "audio",
@@ -137,21 +137,21 @@ Post.create(
 )
 
 # Post.create(
-#   postType: "photo",
+#   post_type: "photo",
 #   # content_id: # TODO: add id for photo: https://c1.staticflickr.com/1/353/20071999428_504e5a5ca2_c.jpg,
 #   content_type: "photo",
 #   author_id: 4
 # )
 #
 # Post.create(
-# postType: "photo",
+# post_type: "photo",
 # # content_id: # TODO: change to photo id: https://c2.staticflickr.com/6/5611/15394468677_0278ee41e4_c.jpg,
 # content_type: "photo",
 # author_id: 2
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -160,7 +160,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -169,7 +169,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -178,7 +178,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -187,7 +187,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -196,7 +196,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -205,7 +205,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -214,7 +214,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -223,7 +223,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -232,7 +232,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -241,7 +241,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -250,7 +250,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -259,7 +259,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -268,7 +268,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -277,7 +277,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -286,7 +286,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -295,7 +295,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -304,7 +304,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -313,7 +313,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -322,7 +322,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -331,7 +331,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -340,7 +340,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -349,7 +349,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -358,7 +358,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -367,7 +367,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -376,7 +376,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -385,7 +385,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -394,7 +394,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -403,7 +403,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -412,7 +412,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -421,7 +421,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -430,7 +430,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -439,7 +439,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -448,7 +448,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -457,7 +457,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -466,7 +466,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -475,7 +475,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -484,7 +484,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -493,7 +493,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -502,7 +502,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -511,7 +511,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -520,7 +520,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -529,7 +529,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
@@ -538,7 +538,7 @@ Post.create(
 # )
 #
 # Post.create(
-#   postType: ,
+#   post_type: ,
 #   title: ,
 #   body: ,
 #   content_id: ,
