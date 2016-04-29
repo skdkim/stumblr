@@ -28,7 +28,7 @@ var updateErrors = function(errors) {
 };
 
 PostStore.all = function() {
-  return Object.keys(_posts).map(function(id){
+  return Object.keys(_posts).reverse().map(function(id){
     return _posts[id];
   });
 };

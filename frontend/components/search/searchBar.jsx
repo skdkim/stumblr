@@ -31,9 +31,15 @@ var SearchBar = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <input type="text" value={this.state.searchInput}
-          placeholder="Search by Tag" onChange={this.updateSearchInput}></input>
+      <div className="search-container">
+        <img className="search-icon" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461955020/search_nfktop.jpg" />
+        <input
+          type="text"
+          className="search-input"
+          value={this.state.searchInput}
+          placeholder="Search by Tag"
+          onChange={this.updateSearchInput}>
+        </input>
       </div>
     );
   }

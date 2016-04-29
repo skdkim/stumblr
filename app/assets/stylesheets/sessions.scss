@@ -4,13 +4,15 @@
 
 
 .landing-container {
+  position: absolute;
+  top: 0px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(http://res.cloudinary.com/dn07p1frq/image/upload/v1461887798/photo-1422919869950-5fdedb27cde8_ms7xf7.jpg);
+  // background-image: url(http://res.cloudinary.com/dn07p1frq/image/upload/v1461887798/photo-1422919869950-5fdedb27cde8_ms7xf7.jpg);
   background-size: 100% 100%;
 }
 

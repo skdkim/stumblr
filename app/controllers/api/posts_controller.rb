@@ -27,7 +27,9 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # TODO: if params[:searchInput].length > 0
+    # TODO: filter by current user's followees
+    @posts = Post.order('created_at DESC')
   end
 
   def show

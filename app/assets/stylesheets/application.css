@@ -18,8 +18,77 @@
    font-family: 'Open Sans', sans-serif;
  }
 
+ html, body {
+   margin: 0;
+ }
+
 html, body, .app, #root {
   height: 100%;
   width: 100%;
   background-color: #36465d;
+}
+
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 40px;
+  background-color: #36465d;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 20px 10px 20px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+
+
+
+.logo {
+  align-self: center;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+  align-content: center;
+  height: 35px;
+  width: 490px;
+  background-color: white;
+  margin: 15px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.search-input {
+  display: block;
+  width: 450px;
+  height: 30px;
+  border: 0;
+  font-size: 15px;
+  margin: 2px;
+  outline-width: 0;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+  align-self: center;
 }

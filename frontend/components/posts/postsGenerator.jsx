@@ -3,27 +3,27 @@ var HashHistory = require('react-router').hashHistory;
 
 var PostsGenerator = React.createClass({
   newTextPost: function() {
-    HashHistory.push('/newtext');
+    HashHistory.push('/dashboard/newtext');
   },
 
   newPhotoPost: function() {
-    HashHistory.push('/newphoto');
+    HashHistory.push('/dashboard/newphoto');
   },
 
   newQuotePost: function() {
-    HashHistory.push('/newquote');
+    HashHistory.push('/dashboard/newquote');
   },
 
   newLinkPost: function() {
-    HashHistory.push('/newlink');
+    HashHistory.push('/dashboard/newlink');
   },
 
   newAudioPost: function() {
-    HashHistory.push('/newaudio');
+    HashHistory.push('/dashboard/newaudio');
   },
 
   newVideoPost: function() {
-    HashHistory.push('/newvideo');
+    HashHistory.push('/dashboard/newvideo');
   },
 
   render: function() {
@@ -36,27 +36,27 @@ var PostsGenerator = React.createClass({
         </button>
         <button className="generator-button" onClick={this.newPhotoPost}>
           <img className="generator-icon"
-            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461949989/photo_gtfggq.jpg"/>
+            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461965952/photocolor_c6t6gr.jpg"/>
           Photo
         </button>
         <button className="generator-button" onClick={this.newQuotePost}>
           <img className="generator-icon"
-            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461949989/quote_pq80kq.jpg"/>
+            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461965952/quotecolor_wulzcp.jpg"/>
           Quote
         </button>
         <button className="generator-button" onClick={this.newLinkPost}>
           <img className="generator-icon"
-            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461949989/link_yg6qna.jpg"/>
+            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461965952/linkcolor_kfolzd.jpg"/>
           Link
         </button>
         <button className="generator-button" onClick={this.newAudioPost}>
           <img className="generator-icon"
-            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461949989/audio_lslyr2.jpg"/>
+            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461965952/audiocolor_k6fom5.jpg"/>
           Audio
         </button>
         <button className="generator-button" onClick={this.newVideoPost}>
           <img className="generator-icon"
-            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461949989/video_s4ylbx.jpg"/>
+            src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461965951/videocolor_ldbmts.jpg"/>
           Video
         </button>
       </div>

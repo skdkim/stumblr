@@ -90,7 +90,7 @@ var SignUpForm = React.createClass({
             {errors}
 
             <input className="auth-input" type="text" value={this.state.username}
-              placeholder="username" onChange={this.updateUsername}  id="focus"/>
+              placeholder="username" onChange={this.updateUsername}  id="focus" autoFocus/>
 
             <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />

@@ -44,9 +44,7 @@ var backgroundImages = {
       'http://res.cloudinary.com/dn07p1frq/image/upload/v1461887797/photo-1422393462206-207b0fbd8d6b_giex2u.jpg',
     ];
 
-    var urlIndex = Math.random() * (this.urls.length - 0) + 0;
-
-    debugger
+    var urlIndex = Math.floor(Math.random() * (urls.length));
 
     return urls[urlIndex];
   }

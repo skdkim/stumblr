@@ -76,7 +76,7 @@ var LoginForm = React.createClass({
             {errors}
 
             <input className="auth-input" type="text" value={this.state.username}
-              placeholder="username" onChange={this.updateUsername} autofocus />
+              placeholder="username" onChange={this.updateUsername} autoFocus />
 
             <input className="auth-input" type="password" value={this.state.password}
               placeholder="password" onChange={this.updatePassword} />

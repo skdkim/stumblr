@@ -49,16 +49,10 @@ var PostsFeed = React.createClass({
     if (this.state.currentUser){
       return(
         <div>
-          <div className="navbar">
-            Hello, {this.state.currentUser.username}!
-            <button onClick={this.logout}>Log Out</button>
-          </div>
-
-
           <div className="feed">
-            <PostsGenerator />
+            {this.props.children}
 
-            {posts.reverse().map(function(post){
+            {posts.map(function(post){
               return <PostsFeedItem key={post.id} post={post}/>;
             })}
           </div>

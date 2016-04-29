@@ -65,8 +65,8 @@ var TextForm = React.createClass({
         <form className="post-form" onSubmit={this.handleSubmit}>
           <input className="title-input" type="text" value={this.state.title}
             placeholder="Title" onChange={this.updateTitle}></input>
-          <input className="body-input" type="textarea" value={this.state.body}
-            placeholder="Your text here" onChange={this.updateBody}></input>
+          <textarea className="body-input" value={this.state.body}
+            placeholder="Your text here" onChange={this.updateBody}></textarea>
           <input className="tags-input" type="text" value={this.state.tags}
             placeholder="#tags" onChange={this.updateTags}></input>
 
