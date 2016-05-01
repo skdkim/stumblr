@@ -48,7 +48,8 @@ module.exports = {
       data: {post: {
         title: post.title,
         body: post.body,
-        content_id: post.content_id,
+        content_url: post.content_url,
+        tags: post.tags
       }},
       success: function(updatedPost) {
         PostServerActions.receivePost(post);

@@ -6,6 +6,8 @@ var HashHistory = require('react-router').hashHistory;
 var PhotoForm = React.createClass({
   getInitialState: function() {
     return {
+      content_url: "",
+      body: "",
       tags: []
     };
   },
@@ -40,16 +42,16 @@ var PhotoForm = React.createClass({
     PostClientActions.createPost(
       {
         post_type: "photo",
-        title: this.state.title,
+        content_url: this.state.content_url,
         body: this.state.body,
         tags: this.state.tags
       }
     );
 
     this.setState({
-      title: "",
+      content_url: "",
       body: "",
-      tags: ""
+      tags: []
     });
   },
 
@@ -70,7 +72,7 @@ var PhotoForm = React.createClass({
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
             <input className="post-form-button"type="submit"
-              value="Post"></input>
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
       </div>

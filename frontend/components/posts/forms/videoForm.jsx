@@ -6,6 +6,9 @@ var HashHistory = require('react-router').hashHistory;
 var VideoForm = React.createClass({
   getInitialState: function() {
     return {
+      title: "",
+      body: "",
+      content_url: "",
       tags: []
     };
   },
@@ -20,6 +23,12 @@ var VideoForm = React.createClass({
 
   pushToDash: function() {
     HashHistory.push('/dashboard');
+  },
+
+  updateUrl: function(e) {
+    this.setState({
+      content_url: e.target.value
+    });
   },
 
   updateTitle: function(e) {
@@ -48,6 +57,7 @@ var VideoForm = React.createClass({
         post_type: "audio",
         title: this.state.title,
         body: this.state.body,
+        content_url: this.state.content_url,
         tags: this.state.tags
       }
     );
@@ -55,7 +65,8 @@ var VideoForm = React.createClass({
     this.setState({
       title: "",
       body: "",
-      tags: ""
+      content_url: "",
+      tags: []
     });
   },
 
@@ -63,13 +74,8 @@ var VideoForm = React.createClass({
     return(
       <div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
-          <input className="title-input" type="textarea" value={this.state.title}
-            placeholder="Title" onChange={this.updateTitle}></input>
-
-
-
-
-
+          <input className="url-input" type="text" value={this.state.url}
+            placeholder="Video URL" onChange={this.updateUrl}></input>
           <input className="caption-input" type="text" value={this.state.body}
             placeholder="Caption" onChange={this.updateBody}></input>
           <input className="tags-input" type="text" value={this.state.tags}
@@ -79,15 +85,13 @@ var VideoForm = React.createClass({
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
             <input className="post-form-button"type="submit"
-              value="Post"></input>
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
       </div>
     );
   }
  });
-
-// TODO: add video uploader input
 
 
  module.exports = VideoForm;

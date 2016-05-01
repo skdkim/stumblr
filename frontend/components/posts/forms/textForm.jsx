@@ -6,6 +6,8 @@ var HashHistory = require('react-router').hashHistory;
 var TextForm = React.createClass({
   getInitialState: function() {
     return {
+      title: "",
+      body: "",
       tags: []
     };
   },
@@ -55,7 +57,7 @@ var TextForm = React.createClass({
     this.setState({
       title: "",
       body: "",
-      tags: ""
+      tags: []
     });
   },
 
@@ -73,8 +75,8 @@ var TextForm = React.createClass({
           <div className="post-submit-bar">
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
-            <input className="post-form-button"type="submit"
-              value="Post"></input>
+            <input className="post-form-button" type="submit"
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
  			</div>

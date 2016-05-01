@@ -6,6 +6,8 @@ var HashHistory = require('react-router').hashHistory;
 var QuoteForm = React.createClass({
   getInitialState: function() {
     return {
+      title: "",
+      body: "",
       tags: []
     };
   },
@@ -55,7 +57,7 @@ var QuoteForm = React.createClass({
     this.setState({
       title: "",
       body: "",
-      tags: ""
+      tags: []
     });
   },
 
@@ -63,10 +65,10 @@ var QuoteForm = React.createClass({
  		return(
  			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
-          <input className="quote-input" type="textarea" value={this.state.title}
-            placeholder="&quot;Quote&quot;" onChange={this.updateTitle}></input>
-          <input className="quote-source-input" type="text" value={this.state.body}
-            placeholder="- Source" onChange={this.updateBody}></input>
+          <input className="quote-input" type="textarea" value={this.state.body}
+            placeholder="&quot;Quote&quot;" onChange={this.updateBody}></input>
+          <input className="quote-source-input" type="text" value={this.state.title}
+            placeholder="- Source" onChange={this.updateTitle}></input>
           <input className="tags-input" type="text" value={this.state.tags}
             placeholder="#tags" onChange={this.updateTags}></input>
 
@@ -74,7 +76,7 @@ var QuoteForm = React.createClass({
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
             <input className="post-form-button"type="submit"
-              value="Post"></input>
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
  			</div>

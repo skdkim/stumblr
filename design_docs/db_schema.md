@@ -4,13 +4,12 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key, indexed
-postType        | string    | not null
+postType    | string    | not null
 title       | string    |
 body        | text      |
-content_id  | integer   | foreign key (references contents)
-content_type| string    |
+content_url | string    |
 author_id   | integer   | not null, foreign key (references users), indexed
-_title, body, and content_id: cannot all be null_
+_title, body, and content_url: cannot all be null_
 
 ## users
 column name     | data type | details

@@ -6,6 +6,9 @@ var HashHistory = require('react-router').hashHistory;
 var AudioForm = React.createClass({
   getInitialState: function() {
     return {
+      content_url: "",
+      title: "",
+      body: "",
       tags: []
     };
   },
@@ -53,9 +56,10 @@ var AudioForm = React.createClass({
     );
 
     this.setState({
+      content_url: "",
       title: "",
       body: "",
-      tags: ""
+      tags: []
     });
   },
 
@@ -78,7 +82,7 @@ var AudioForm = React.createClass({
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
             <input className="post-form-button"type="submit"
-              value="Post"></input>
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
  			</div>

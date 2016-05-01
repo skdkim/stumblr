@@ -6,6 +6,10 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author_id = current_user.id
 
+    if @post.post_type == "video"
+      @post.content_url.sub!('watch?v=', 'embed/')
+    end
+
     if @post.save
       render :show
     else
@@ -44,6 +48,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:post_type, :title, :body, :content_id, :content_type)
+    params.require(:post).permit(:post_type, :title, :body, :content_url, :tags)
   end
 end

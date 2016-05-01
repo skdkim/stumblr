@@ -28,7 +28,6 @@ var updateErrors = function(errors) {
 };
 
 UserStore.__onDispatch = function(payload) {
-  // debugger
   switch (payload.actionType) {
     case UserConstants.LOGIN:
       addUser(payload.user);

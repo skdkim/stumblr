@@ -6,6 +6,9 @@ var HashHistory = require('react-router').hashHistory;
 var LinkForm = React.createClass({
   getInitialState: function() {
     return {
+      content_url: "",
+      title: "",
+      body: "",
       tags: []
     };
   },
@@ -20,6 +23,12 @@ var LinkForm = React.createClass({
 
   pushToDash: function() {
     HashHistory.push('/dashboard');
+  },
+
+  updateUrl: function(e) {
+    this.setState({
+      content_url: e.target.value
+    });
   },
 
   updateTitle: function(e) {
@@ -46,6 +55,7 @@ var LinkForm = React.createClass({
     PostClientActions.createPost(
       {
         post_type: "link",
+        content_url: this.state.content_url,
         title: this.state.title,
         body: this.state.body,
         tags: this.state.tags
@@ -53,9 +63,10 @@ var LinkForm = React.createClass({
     );
 
     this.setState({
+      content_url: "",
       title: "",
       body: "",
-      tags: ""
+      tags: []
     });
   },
 
@@ -63,8 +74,10 @@ var LinkForm = React.createClass({
  		return(
  			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
+          <input className="link-input" type="textarea" value={this.state.content_url}
+            placeholder="URL" onChange={this.updateUrl}></input>
           <input className="link-input" type="textarea" value={this.state.title}
-            placeholder="URL" onChange={this.updateTitle}></input>
+            placeholder="Display Text" onChange={this.updateTitle}></input>
           <input className="caption-input" type="text" value={this.state.body}
             placeholder="Caption" onChange={this.updateBody}></input>
           <input className="tags-input" type="text" value={this.state.tags}
@@ -74,7 +87,7 @@ var LinkForm = React.createClass({
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
             <input className="post-form-button"type="submit"
-              value="Post"></input>
+              value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>
  			</div>

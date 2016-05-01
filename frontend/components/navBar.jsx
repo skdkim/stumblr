@@ -12,11 +12,11 @@ var NavBar = React.createClass({
       return (
         <div className="nav-right">
           Hello,&nbsp;{this.state.currentUser.username}!
-          <button onClick={this.logout}>Log Out</button>
+          <button className="nav-button" onClick={this.logout}>Log Out</button>
         </div>
       );
     } else {
-      return <div>loading...</div>;
+      return <div></div>;
     }
   },
 
