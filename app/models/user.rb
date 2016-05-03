@@ -5,8 +5,21 @@ class User < ActiveRecord::Base
 
   has_many :posts,
     foreign_key: :author_id,
-    primary_key: :id,
     class_name: :Post
+
+  has_many :followers,
+    through: :follows,
+    source: :followers
+  has_many :followeds,
+    through: :follows,
+    source: :followeds
+
+  has_many :likes
+  has_many :liked_posts,
+    through: :likes,
+    source: :post
+
+
 
   attr_reader :password
 

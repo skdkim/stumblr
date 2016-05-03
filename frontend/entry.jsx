@@ -7,9 +7,11 @@ var React = require('react');
  var UserStore = require('./stores/userStore');
 
  var App = require('./components/app.jsx');
+ var LandingContainer = require('./components/user/landingContainer');
  var Landing = require('./components/user/landing.jsx');
  var LoginForm = require('./components/user/loginForm');
  var SignUpForm = require('./components/user/signUpForm');
+ var Blog = require('./components/blogs/blog');
  // var PostForm = require('./components/posts/postForm');
  var PostsFeed = require('./components/posts/postsFeed');
  var PostsFeedItem = require('./components/posts/postsFeedItem');
@@ -32,9 +34,11 @@ var React = require('react');
 
  var routes = (
  	<Route path='/' component={App}>
-    <IndexRoute component={Landing}></IndexRoute>
-    <Route path='signup' component={SignUpForm}></Route>
-    <Route path='login' component={LoginForm}></Route>
+    <Route component={LandingContainer}>
+      <IndexRoute component={Landing}></IndexRoute>
+      <Route path='signup' component={SignUpForm}></Route>
+      <Route path='login' component={LoginForm}></Route>
+    </Route>
     <Route path='explore' component={SearchFeed}></Route>
 
     <Route path='dashboard' component={PostsFeed}>
@@ -46,8 +50,10 @@ var React = require('react');
       <Route path='newaudio' component={AudioForm}></Route>
       <Route path='newvideo' component={VideoForm}></Route>
    	</Route>
+
   </Route>
  );
+ // <Route path={'users/' + parseInt(UserStore.currentUser().id)} component={Blog}></Route>
  // TODO: post form as always-child of postsfeed
  // TODO: postfeeditem as always-child of postsfeed
 

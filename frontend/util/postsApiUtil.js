@@ -63,7 +63,7 @@ module.exports = {
   deletePost: function(postId) {
     $.ajax({
       method: 'DELETE',
-      url: 'api/posts',
+      url: 'api/posts/' + postId,
       success: function(post) {
         PostServerActions.removePost(post);
       },

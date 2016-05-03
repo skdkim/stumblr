@@ -23,5 +23,9 @@ module.exports = {
 
   deleteUser: function() {
     UserApiUtil.deleteUser();
+  },
+
+  followUser: function(follower, followed) {
+    UserApiUtil.followUser(follower, followed);
   }
 };

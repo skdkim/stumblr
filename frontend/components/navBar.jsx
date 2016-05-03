@@ -8,7 +8,6 @@ var NavBar = React.createClass({
   mixins: [CurrentUserStateMixin],
 
   pushToProfile: function() {
-    // console.log(this.state.currentUser);
     HashHistory.push('/users/' + this.state.currentUser.username);
   },
 
@@ -43,7 +42,7 @@ var NavBar = React.createClass({
     return (
       <div className="navbar">
         <div className="nav-left">
-          <img className="logo" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461962894/logo4_hmykzh.jpg" />
+          <img className="logo" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461962894/logo4_hmykzh.jpg" onClick={this.pushToDash}/>
           <SearchBar/>
         </div>
         {this.navRight()}

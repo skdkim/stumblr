@@ -3,7 +3,7 @@ class Tag < ActiveRecord::Base
 
   has_many :taggings
 
-  belongs_to :post,
+  has_many :posts,
     through: :taggings,
-    source: :posts
+    source: :post
 end

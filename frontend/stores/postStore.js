@@ -1,5 +1,6 @@
 var Store = require('flux/utils').Store;
 var PostConstants = require('../constants/postConstants');
+var LikeConstants = require('../constants/likeConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var _posts = {};
@@ -21,6 +22,15 @@ var addPost = function(post) {
 
 var removePost = function(post) {
   delete _posts[post.id];
+};
+
+var addLike = function(postId, userId) {
+  _posts[postId].liking_users.push(parseInt(userId));
+};
+
+var removeLike = function(postId, userId) {
+  var userIdx = _posts[postId].liking_users.indexOf(parseInt(userId));
+  _posts[postId].liking_users.splice(userIdx, 1);
 };
 
 var updateErrors = function(errors) {
@@ -50,6 +60,12 @@ PostStore.__onDispatch = function(payload) {
       break;
     case PostConstants.ERROR:
       updateErrors(payload.errors);
+      break;
+    case LikeConstants.LIKE_RECEIVED:
+      addLike(payload.like.postId, payload.like.userId);
+      break;
+    case LikeConstants.LIKE_REMOVED:
+      removeLike(payload.like.postId, payload.like.userId);
       break;
   }
   this.__emitChange();

@@ -8,130 +8,49 @@ var PostFeedItem = React.createClass({
 
   textPost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
             <div>
               <div className="title">{this.props.post.title}</div>
-              <div className="body">{this.props.post.body}</div>
+              <div className="body">
+                {this.props.post.body.indexOf('\n') > -1
+                  ?
+                    <pre>{this.props.post.body}</pre>
+                  :
+                    this.props.post.body}
+              </div>
             </div>
-
-
-            <div className="tags">
-
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   photoPost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
             <div>
               <img className="photo" src={this.props.post.content_url}></img>
               <div className="body">{this.props.post.body}</div>
             </div>
-
-            <div className="tags">
-
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   quotePost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
             <div>
               <div className="title">{this.props.post.title}</div>
               <div className="quote-source">-&nbsp;{this.props.post.body}</div>
             </div>
-
-            <div className="tags">
-
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   linkPost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
             <div>
               <a className="url" href={this.props.post.content_url}>{this.props.post.title}</a>
               <div className="body">{this.props.post.body}</div>
             </div>
-
-            <div className="tags">
-
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   audioPost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
+
             <div>
 
               <audio controls>
@@ -144,29 +63,12 @@ var PostFeedItem = React.createClass({
 
             </div>
 
-            <div className="tags">
 
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   videoPost: function() {
     return (
-      <div className="post-container">
-        <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
-        </div>
-        <div className="post">
-   				<div className="post-bar">
-            <p className="author" onClick={this.pushToBlog}>
-              {this.props.post.author.username}
-            </p>
-   				</div>
-          <div className="post-content">
             <div>
               <div className="video">
                 <iframe
@@ -180,21 +82,14 @@ var PostFeedItem = React.createClass({
               <div className="title">{this.props.post.title}</div>
               <div className="body">{this.props.post.body}</div>
             </div>
-
-            <div className="tags">
-
-            </div>
-          </div>
-          {this.postNav()}
-   			</div>
-      </div>
     );
   },
 
   postNav: function() {
+    var noteCount = this.props.post.notes.length;
     return (
       <div className="post-bar post-nav">
-        <p>notes here</p>
+        <p>{noteCount} notes</p>
         <p>
           <img
             className="post-nav-icon-large"
@@ -202,18 +97,16 @@ var PostFeedItem = React.createClass({
             onClick={this.reblog}>
           </img>
 
-          {this.props.post.author === this.props.currentUser
+          {this.props.post.author.username === this.state.currentUser.username
             ?
-              <div>
                 <img
-                  className="post-nav-icon"
+                  className="post-nav-icon-medium"
                   src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462208187/delete_dtfzyr.jpg"
                   onClick={this.delete}>
                 </img>
-              </div>
             :
               <img
-                className="post-nav-icon"
+                className="post-nav-icon-small"
                 src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartgray_selz14.jpg"
                 onClick={this.like}>
               </img>
@@ -232,7 +125,7 @@ var PostFeedItem = React.createClass({
 
 
   reblog: function() {
-    var rebloggedPost = this.props.post;
+    var rebloggedPost = Object.assign({}, this.props.post);
     rebloggedPost.original_author = rebloggedPost.author;
     rebloggedPost.author = this.state.currentUser;
     PostAPIUtil.createPost(rebloggedPost);
@@ -243,31 +136,58 @@ var PostFeedItem = React.createClass({
   },
 
   delete: function() {
-
+    PostAPIUtil.deletePost(this.props.post.id);
   },
 
-
-
  	render: function () {
-
-
-    // TODO: render all of the post's tags
-
-
     switch (this.props.post.post_type) {
       case "text":
-        return this.textPost();
+        var content = this.textPost();
+        break;
       case "photo":
-        return this.photoPost();
+        var content = this.photoPost();
+        break;
       case "quote":
-        return this.quotePost();
+        var content = this.quotePost();
+        break;
       case "link":
-        return this.linkPost();
+        var content = this.linkPost();
+        break;
       case "audio":
-        return this.audioPost();
+        var content = this.audioPost();
+        break;
       case "video":
-        return this.videoPost();
+        var content = this.videoPost();
+        break;
     }
+
+
+    return (
+      <div className="post-container">
+        <div className="user-photo-container">
+          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
+        </div>
+        <div className="post">
+   				<div className="post-bar">
+            <p className="author" onClick={this.pushToBlog}>
+              {this.props.post.author.username}
+            </p>
+   				</div>
+          <div className="post-content">
+
+            {content}
+
+            <ul className="tags">
+              {this.props.post.tags.map(function(tag){
+                return <li className="tag" id={tag.id}>#{tag.tag}</li>;
+              })}
+            </ul>
+
+          </div>
+          {this.postNav()}
+   			</div>
+      </div>
+    );
  	}
  });
 

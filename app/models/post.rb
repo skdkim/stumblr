@@ -10,12 +10,16 @@ class Post < ActiveRecord::Base
     class_name: :User
 
   has_many :taggings
-
   has_many :tags,
       through: :taggings,
-      source: :tags
+      source: :tag
 
   has_many :notes
+
+  has_many :likes
+  has_many :liking_users,
+    through: :likes,
+    source: :user
 
   def body_and_content_url_null?
     return true unless body || content_url

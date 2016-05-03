@@ -66,5 +66,35 @@ module.exports = {
         UserServerActions.handleError(error);
       }
     });
+  },
+
+  followUser: function(follower, followed) {
+    $.ajax({
+      method: 'POST',
+      url: 'api/followers',
+      data: {follower: follower, followed: followed},
+      success: function(currentUser) {
+        UserServerActions.receiveCurrentUser(currentUser);
+      },
+      error: function(error) {
+        UserServerActions.handleError(error);
+      }
+    });
+  },
+
+
+  // TODO: get follow id!
+  unfollowUser: function(follower, followed) {
+    $.ajax({
+      method: 'DELETE',
+      url: 'api/followers',
+      data: {follower: follower, followed: followed},
+      success: function(currentUser) {
+        UserServerActions.receiveCurrentUser(currentUser);
+      },
+      error: function(error) {
+        UserServerActions.handleError(error);
+      }
+    });
   }
 };

@@ -1,8 +1,7 @@
 var React = require('react');
+var BlogItem = require('./blogItem');
 var PostStore = require('../../stores/postStore');
 var UserStore = require('../../stores/userStore');
-var PostsFeedItem = require('./postsFeedItem');
-var PostsGenerator = require('./postsGenerator');
 var PostClientActions = require('../../actions/posts/postClientActions');
 var UserClientActions = require('../../actions/user/userClientActions');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
@@ -20,18 +19,10 @@ var PostsFeed = React.createClass({
   componentDidMount: function() {
     PostClientActions.fetchPosts();
     this.postListener = PostStore.addListener(this._onChange);
-    this.errorsListener = UserStore.addListener(this._authErrors);
   },
 
   componentWillUnmount: function() {
     this.postListener.remove();
-    this.errorsListener.remove();
-  },
-
-  _authErrors: function() {
-    if (!UserStore.currentUser()) {
-      HashHistory.push('/');
-    }
   },
 
   _onChange: function() {
@@ -41,23 +32,22 @@ var PostsFeed = React.createClass({
   },
 
  	render: function () {
-    var posts = this.state.posts;
-    if (this.state.currentUser){
-      return(
-        <div>
-          <div className="feed">
-            {this.props.children}
+    return (
+      <div className="blog">
+        <div className="follow-nav">
 
-            {posts.map(function(post){
-              return <PostsFeedItem key={post.id} post={post}/>;
-            })}
-
-          </div>
         </div>
-      );
-    } else {
-      return <div>loading</div>;
-    }
+        <div className="blog-info">
+          Blog Info
+        </div>
+
+        <div className="blog-feed">
+          {this.props.posts.map(function(post){
+            return <BlogItem post={post}/>;
+          })}
+        </div>
+      </div>
+    );
  	}
  });
 

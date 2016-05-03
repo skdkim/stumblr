@@ -27,7 +27,14 @@
   margin: 2px;
 }
 
-.landing-container > p {
+.landing {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing > p {
   margin-top: 30px;
   color: white;
   text-shadow: 1.5px 1.5px black;

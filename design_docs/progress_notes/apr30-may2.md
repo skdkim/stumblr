@@ -7,15 +7,19 @@
 - ~~how to push to dash after new post has been successfully created~~
   - ~~shouldn't this already be working since the form has a listener on the `PostStore` that pushes to dashboard on change?~~
   - surprise! it is. fixing the push to dash from login/sign up when already logged in fixed this
-- how to get the transaction working
+- ~~how to get the transaction working~~
 - ~~youtube embed is throwing a chrome extension error~~
   - this is based in YouTube's code; nothing to be done
 - ~~login and signup pushing to dash only works every other time??~~
   - call `pushToDash()` on component mount since the listener only triggers if the store changes
-- get /n to render properly in posts
-- why only username for `currentUser` in `NavBar`?
-- do I need a whole separate `NoteAPIUtil` and `TaggingsAPIUtil` and `TagAPIUtil`
-- add 'feed' as `searchInput` for dashboard feed or better solution?
+- ~~get /n to render properly in posts~~
+  - use `<pre>` tag
+- ~~why only username for `currentUser` in `NavBar`?~~
+  -jbuilder! need to edit to let other properties through
+- ~~do I need a whole separate `NoteAPIUtil` and `TaggingsAPIUtil` and `TagAPIUtil`~~
+  - just fetch with posts
+- ~~add 'feed' as `searchInput` for dashboard feed or better solution?~~
+  - pass param from explore link and have if/else if/else in `PostsController` index route
 
 ## In Progress
 
