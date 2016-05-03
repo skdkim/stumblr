@@ -6,11 +6,41 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author_id = current_user.id
 
+    @post.body = simple_format(@post.body)
+
     if @post.post_type == "video"
       @post.content_url.sub!('watch?v=', 'embed/')
     end
 
-    if @post.save
+    tags = params[:post][:tags]
+    if tags
+      tags.split!(",")
+      tags.each do |tag|
+        if Tag.find_by(tag: tag)
+          tag_id = Tag.find_by(tag: tag).id
+        else
+          new_tag = Tag.create(tag: tag)
+          tag_id = new_tag.id
+        end
+      end
+    end
+
+    ActiveRecord::Base.transaction do
+      saved = @post.save
+      Tagging.create(post_id: @post.id, tag_id: tag_id)
+      if params[:post][:original_author]
+        original_author = params[:post][:original_author]
+        Note.create(
+          author_id: original_author,
+          noter_id: @post.author_id,
+          post_id: @post.id,
+          note_type: "reblog"
+        )
+      end
+    end
+
+    if saved
+    # if @post.save
       render :show
     else
       render json: @post.errors.full_messages, status: 422
@@ -48,6 +78,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:post_type, :title, :body, :content_url, :tags)
+    params.require(:post).permit(:post_type, :title, :body, :content_url)
   end
 end

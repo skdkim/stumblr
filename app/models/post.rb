@@ -9,6 +9,14 @@ class Post < ActiveRecord::Base
     primary_key: :id,
     class_name: :User
 
+  has_many :taggings
+
+  has_many :tags,
+      through: :taggings,
+      source: :tags
+
+  has_many :notes
+
   def body_and_content_url_null?
     return true unless body || content_url
     false

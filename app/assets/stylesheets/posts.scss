@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .feed {
   width: 600px;
-  margin-left: 18%;
+  margin-left: 19%;
+  margin-top: 25px;
+  position: relative;
+  top: 55px;
 }
 
 .post {
@@ -14,8 +18,40 @@
   background-color: white;
   border-radius: 3px;
   overflow: hidden;
-  margin: 20px;
+  margin: 10px;
   flex-direction: column;
+}
+
+.post-container {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  left: -60px;
+  width: 640px;
+}
+
+.user-photo-container {
+  position: relative;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+  // background-position: center center;
+}
+
+.user-photo {
+  width: 60px;
+  height: auto;
+}
+
+.user-photo-container:hover {
+  position: relative;
+  left: -3px;
+  // border-top: 2px solid white;
+  // border-left: 2px solid white;
+  cursor: pointer;
 }
 
 .post-bar {
@@ -32,6 +68,22 @@
   justify-content: space-between;
 }
 
+.post-nav-icon {
+  width: 27px;
+  height: 27px;
+  margin-left: 15px;
+  position: relative;
+  top: -5px;
+}
+
+.post-nav-icon-large {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  position: relative;
+  top: -7px;
+}
+
 .post-content {
   margin: 0px 22px;
   font-size: 14px;
@@ -41,6 +93,10 @@
   font-weight: bold;
 }
 
+.author:hover {
+  cursor: pointer;
+}
+
 .title {
   justify-content: center;
   font-size: 34px;
@@ -48,9 +104,16 @@
 }
 
 
-
 .generator-container {
-  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  left: -60px;
+  width: 650px;
+}
+
+.generator {
+  margin: 10px;
   border-radius: 3px;
   overflow: hidden;
   background-color: white;
@@ -76,7 +139,6 @@
 .generator-button:hover .generator-icon{
   position: relative;
   top: -5px;
-  // top: 82px;
 }
 
 
@@ -227,12 +289,49 @@ textarea {
 
 
 
+// general content display
 
+.body {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
 
+// photo display
+
+.photo {
+  width: 540px;
+  height: auto;
+  position: relative;
+  left: -22px;
+}
+
+// quote display
+
+.quote-source {
+  font-size: 22px;
+}
+
+//link display
+
+.url {
+  font-size: 28px;
+  color: black;
+  font-weight: bold;
+}
+
+// audio display
+
+.audio-display {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
 
 // video display
 
 .video {
-  margin: 10px;
-  border: none;
+  position: relative;
+  left: -24px;
 }

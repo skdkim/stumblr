@@ -33,7 +33,7 @@ module.exports = {
       url: 'api/posts',
       data: {post: post},
       success: function(newPost) {
-        PostServerActions.receivePost(post);
+        PostServerActions.receivePost(newPost);
       },
       error: function(error) {
         PostServerActions.handleError(error);

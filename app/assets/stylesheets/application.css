@@ -32,34 +32,39 @@ html, body, .app, #root {
 
 
 .navbar {
+  position: fixed;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   align-content: center;
-  height: 40px;
+  height: 50px;
+  width: 100%;
   background-color: #36465d;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   overflow: hidden;
-  margin: 10px 20px 10px 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, .25);
+  z-index: 10;
 }
 
 .nav-left {
   display: flex;
   justify-content: flex-start;
   z-index: 1;
+  position: relative;
+  top: 4px;
 }
-
-.nav-right {
-  display: flex;
-  justify-content: flex-end;
-  color: white;
-}
-
-
 
 .logo {
   align-self: center;
   width: 40px;
   height: 40px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  transform: rotate(0.15turn);
 }
 
 
@@ -96,8 +101,25 @@ html, body, .app, #root {
 
 
 
-.nav-button {
-  background-color: white;
-  border-radius: 5px;
-  border: 0;
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  top: 13px;
+}
+
+.nav-icon {
+  width: 35px;
+  height: 35px;
+  color: white;
+  margin-right: 30px;
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+  position: relative;
+  bottom: -2px;
 }

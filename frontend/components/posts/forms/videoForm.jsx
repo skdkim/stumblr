@@ -54,7 +54,7 @@ var VideoForm = React.createClass({
 
     PostClientActions.createPost(
       {
-        post_type: "audio",
+        post_type: "video",
         title: this.state.title,
         body: this.state.body,
         content_url: this.state.content_url,
@@ -75,7 +75,7 @@ var VideoForm = React.createClass({
       <div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
           <input className="url-input" type="text" value={this.state.url}
-            placeholder="Video URL" onChange={this.updateUrl}></input>
+            placeholder="YouTube Watch URL" onChange={this.updateUrl}></input>
           <input className="caption-input" type="text" value={this.state.body}
             placeholder="Caption" onChange={this.updateBody}></input>
           <input className="tags-input" type="text" value={this.state.tags}

@@ -6,14 +6,14 @@
 ### Minimum Viable Product
 
 Stumblr is a web application influenced by Tumblr, allowing users to share and interact with blog posts of various media types. Built using Ruby on Rails and React.js, it will include these minimum features:
-- [ ] Account creation, user login, and demo login
-- [ ] Seed data to illustrate the app's features
-- [ ] Posting of text, photos, links, audio, and video
+- [O] Account creation, user login, and demo login
+- [O] Seed data to illustrate the app's features
+- [O] Posting of text, photos, links, audio, and video
 - [ ] Interaction with other users' posts (liking and reblogging)
 - [ ] Post tagging and search by tags
 - [ ] Bug-free
-- [ ] Hosted on Heroku
-- [ ] Styled and interactive (user action feedback)
+- [X] Hosted on Heroku
+- [O] Styled and interactive (user action feedback)
 - [ ] Production readme (to replace this readme)
 
 ### Design Docs
@@ -42,33 +42,33 @@ Stumblr is a web application influenced by Tumblr, allowing users to share and i
 the API.
 
 - [X] create `Post` model
-- [ ] seed the database
-- [ ] CRUD API for posts (`PostsController`)
+- [O] seed the database
+- [X] CRUD API for posts (`PostsController`)
 - [X] jBuilder views for posts
-- [ ] setup `APIUtil` to interact with the API
-- [ ] file hosting of some kind (lightning talk on this to come?)
+- [X] setup `APIUtil` to interact with the API
+- [O] file hosting of some kind (lightning talk on this to come?)
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
 
 **Objective:** Posts can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [X] setup the flux loop with skeleton files
+- [X] setup React Router
 - implement each post component, building out the flux loop as needed.
-  - [ ] `PostsGenerator`
-  - [ ] `PostsFeed`
-  - [ ] `PostsFeedItem`
-  - [ ] `PostForm`
+  - [X] `PostsGenerator`
+  - [X] `PostsFeed`
+  - [X] `PostsFeedItem`
+  - [X] `PostForm`
   - [ ] `PostsNote`
-- [ ] work out differentiation between content types in forms, creation, and display
+- [X] work out differentiation between content types in forms, creation, and display
 - [ ] infinite scroll
 
 ### Phase 4: Taggings and Search (1.5 days)
 
 **Objective:** Posts can be given multiple tags, which can be used to search posts.
 
-- [ ] create `Tagging` model
+- [X] create `Tagging` model
 - [ ] seed database with tag data
 - [ ] build out API, Flux loop, and components for:
   - [ ] adding tags to post

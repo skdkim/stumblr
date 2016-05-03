@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430211647) do
+ActiveRecord::Schema.define(version: 20160502235620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "author_id",  null: false
+    t.integer  "noter_id",   null: false
+    t.integer  "post_id",    null: false
+    t.string   "note_type",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -28,15 +37,27 @@ ActiveRecord::Schema.define(version: 20160430211647) do
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id",  null: false
+    t.integer "post_id", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag", null: false
+  end
+
+  add_index "tags", ["tag"], name: "index_tags_on_tag", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string   "username",         null: false
+    t.string   "username",                                                                                                        null: false
     t.string   "blog_title"
     t.string   "blog_description"
     t.integer  "photo_id"
-    t.string   "password_digest",  null: false
-    t.string   "session_token",    null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "password_digest",                                                                                                 null: false
+    t.string   "session_token",                                                                                                   null: false
+    t.datetime "created_at",                                                                                                      null: false
+    t.datetime "updated_at",                                                                                                      null: false
+    t.string   "profile_image_url", default: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462228620/anonymous_bij7md.png", null: false
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

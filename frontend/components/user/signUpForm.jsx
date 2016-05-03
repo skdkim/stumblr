@@ -16,6 +16,7 @@ var SignUpForm = React.createClass({
 
   componentDidMount: function() {
     this.listener = UserStore.addListener(this.pushToDash);
+    this.pushToDash();
   },
 
   componentWillUnmount: function() {
@@ -76,30 +77,22 @@ var SignUpForm = React.createClass({
       errors = this.errors();
     }
 
-    if (this.state.currentUser) {
-      return(
-        <div>
-          Hello, {this.state.currentUser.username}!
-          <button onClick={this.logout}>Log Out</button>
-        </div>
-      );
-    } else {
-      return(
-        <div className="landing-container">
-          <form onSubmit={this.handleSubmit}>
-            {errors}
+    return(
+      <div className="landing-container">
+        <form onSubmit={this.handleSubmit}>
+          {errors}
 
-            <input className="auth-input" type="text" value={this.state.username}
-              placeholder="username" onChange={this.updateUsername}  id="focus" autoFocus/>
+          <input className="auth-input" type="text" value={this.state.username}
+            placeholder="username" onChange={this.updateUsername}  id="focus" autoFocus/>
 
-            <input className="auth-input" type="password" value={this.state.password}
-              placeholder="password" onChange={this.updatePassword} />
+          <input className="auth-input" type="password" value={this.state.password}
+            placeholder="password" onChange={this.updatePassword} />
 
-            <input className="auth-input submit" type="submit" value="Sign Up"/>
-          </form>
-        </div>
-      );
-    }
+          <input className="auth-input submit" type="submit" value="Sign Up"/>
+        </form>
+      </div>
+    );
+
  	}
  });
 

@@ -65,10 +65,10 @@ var QuoteForm = React.createClass({
  		return(
  			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
-          <input className="quote-input" type="textarea" value={this.state.body}
-            placeholder="&quot;Quote&quot;" onChange={this.updateBody}></input>
-          <input className="quote-source-input" type="text" value={this.state.title}
-            placeholder="- Source" onChange={this.updateTitle}></input>
+          <input className="quote-input" type="textarea" value={this.state.title}
+            placeholder="&quot;Quote&quot;" onChange={this.updateTitle}></input>
+          <input className="quote-source-input" type="text" value={this.state.body}
+            placeholder="Source" onChange={this.updateBody}></input>
           <input className="tags-input" type="text" value={this.state.tags}
             placeholder="#tags" onChange={this.updateTags}></input>
 

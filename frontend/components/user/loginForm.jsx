@@ -16,6 +16,7 @@ var LoginForm = React.createClass({
 
   componentDidMount: function() {
     this.listener = UserStore.addListener(this.pushToDash);
+    this.pushToDash();
   },
 
   componentWillUnmount: function() {
@@ -70,22 +71,23 @@ var LoginForm = React.createClass({
       errors = this.errors();
     }
 
-      return(
-        <div className="landing-container">
-          <form onSubmit={this.handleSubmit}>
-            {errors}
+    return(
+      <div className="landing-container">
+        <form onSubmit={this.handleSubmit}>
+          {errors}
 
-            <input className="auth-input" type="text" value={this.state.username}
-              placeholder="username" onChange={this.updateUsername} autoFocus />
+          <input className="auth-input" type="text" value={this.state.username}
+            placeholder="username" onChange={this.updateUsername} autoFocus />
 
-            <input className="auth-input" type="password" value={this.state.password}
-              placeholder="password" onChange={this.updatePassword} />
+          <input className="auth-input" type="password" value={this.state.password}
+            placeholder="password" onChange={this.updatePassword} />
 
-            <input className="auth-input submit" type="submit" value="Log In"/>
-          </form>
-        </div>
-      );
-    }
+          <input className="auth-input submit" type="submit" value="Log In"/>
+        </form>
+      </div>
+    );
+  }
+
  });
 
 
