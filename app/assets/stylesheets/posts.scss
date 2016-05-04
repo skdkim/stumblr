@@ -56,13 +56,17 @@
   height: 45px;
   padding: 0px 22px;
   font-size: 13px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.follow-button:hover {
+  cursor: pointer;
 }
 
 .post-nav {
   color: #969696;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
   position: relative;
 }
 
@@ -129,6 +133,7 @@
   align-content: center;
   position: relative;
   left: -40px;
+  padding-bottom: 5px;
 
   list-style-type: none;
   overflow: hidden;
@@ -179,8 +184,7 @@
 }
 
 .generator-button:hover .generator-icon{
-  position: relative;
-  top: -5px;
+  transform: translate(0px, -4px);
 }
 
 

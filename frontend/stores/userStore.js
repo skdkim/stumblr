@@ -1,6 +1,7 @@
 var Store = require('flux/utils').Store;
 var UserConstants = require('../constants/userConstants');
 var LikeConstants = require('../constants/likeConstants');
+var FollowConstants = require('../constants/followConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var _currentUser;
@@ -33,6 +34,15 @@ var removeLike = function(postId) {
   _currentUser.liked_posts.splice(postIdx, 1);
 };
 
+var addFollow = function(followerId, followedId) {
+  _currentUser.followeds.push(parseInt(followedId));
+};
+
+var removeFollow = function(followerId, followedId) {
+  var followedIdx = _currentUser.followeds.indexOf(parseInt(followedId));
+  _currentUser.followeds.splice(followedIdx, 1);
+};
+
 var updateErrors = function(errors) {
   _authErrors = errors;
 };
@@ -53,6 +63,12 @@ UserStore.__onDispatch = function(payload) {
       break;
     case LikeConstants.LIKE_REMOVED:
       removeLike(payload.like.post_id);
+      break;
+    case FollowConstants.FOLLOW_RECEIVED:
+      addFollow(payload.follow.follower_id, payload.follow.followed_id);
+      break;
+    case FollowConstants.FOLLOW_REMOVED:
+      removeFollow(payload.follow.follower_id, payload.follow.followed_id);
       break;
   }
   this.__emitChange();

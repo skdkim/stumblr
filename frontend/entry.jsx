@@ -51,13 +51,9 @@ var React = require('react');
       <Route path='newvideo' component={VideoForm}></Route>
    	</Route>
 
+    <Route path='users/:id' component={Blog}></Route>
   </Route>
  );
- // <Route path={'users/' + parseInt(UserStore.currentUser().id)} component={Blog}></Route>
- // TODO: post form as always-child of postsfeed
- // TODO: postfeeditem as always-child of postsfeed
-
- // TODO: all of these(!) push to landing if not logged in; on enter hook
 
  document.addEventListener('DOMContentLoaded', function () {
  	ReactDOM.render(

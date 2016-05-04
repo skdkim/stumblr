@@ -5,7 +5,6 @@
 - where to pass param to posts controller so that returns correct post collection
 - FILTERING
 - search feed - `this.props.posts` undefined
-- reblogging breaks like functionality
 
 ## In Progress
 

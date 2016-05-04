@@ -36,6 +36,7 @@ var PostsFeed = React.createClass({
       <div className="blog">
         <div className="blog-info">
           Blog Info
+          
         </div>
 
         <div className="blog-feed">

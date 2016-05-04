@@ -1,7 +1,9 @@
 var React = require('react');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
 var PostAPIUtil = require('../../util/postsApiUtil');
+var PostClientActions = require('../../actions/posts/postClientActions');
 var LikeActions = require('../../actions/likeActions');
+var FollowActions = require('../../actions/followActions');
 var HashHistory = require('react-router').hashHistory;
 
 var PostFeedItem = React.createClass({
@@ -150,6 +152,35 @@ var PostFeedItem = React.createClass({
     }
   },
 
+  isFollowing: function() {
+    var currentUser = this.state.currentUser;
+    if (currentUser) {
+      var followeds = currentUser.followeds;
+      if (followeds.indexOf(this.props.post.author.id) > -1) {
+        return "unfollow";
+      } else {
+        return "follow";
+      }
+    }
+  },
+
+
+  toggleFollow: function() {
+    var followData = {
+      follower_id: this.state.currentUser.id,
+      followed_id: this.props.post.author_id
+    };
+
+    if (this.isFollowing() === "unfollow") {
+      FollowActions.deleteFollow(followData);
+    } else {
+      FollowActions.createFollow(followData);
+    }
+
+    PostClientActions.fetchPosts();
+  },
+
+
   pushToBlog: function() {
     HashHistory.push('/users/' + this.props.post.author.id);
   },
@@ -199,6 +230,10 @@ var PostFeedItem = React.createClass({
             <p className="author" onClick={this.pushToBlog}>
               {this.props.post.author.username}
             </p>
+            <p className="follow-button" onClick={this.toggleFollow}>
+              {this.isFollowing()}
+            </p>
+
    				</div>
           <div className="post-content">
 
@@ -218,7 +253,5 @@ var PostFeedItem = React.createClass({
  	}
  });
 
-// TODO: add PostNotes to postNav
-// TODO: add like or not functionality
 
  module.exports = PostFeedItem;

@@ -29,7 +29,6 @@ class Api::PostsController < ApplicationController
         end
       end
 
-      # fail
       if params[:post][:original_author]
         original_author = params[:post][:original_author]
         Note.create(
@@ -42,7 +41,6 @@ class Api::PostsController < ApplicationController
     end
 
     if saved
-    # if @post.save
       render :show
     else
       render json: ["unsuccessful post"], status: 422
@@ -63,18 +61,13 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    # TODO: pass "explore" as param
-    # TODO: if params[:searchInput].length > 0
-    # TODO: filter by current user's followees
-    # if params[:searchInput]
-    #   # @posts = Post.includes(:tags, :notes).where()
+    if params[:searchInput]
+      @posts = Tag.find_by(tag: params[:searchInput]).posts.order('created_at DESC')
     # elsif params[:explore]
     #   @posts = Post.includes(:tags, :notes).order('created_at DESC')
-    # else
-    #   # @posts = Post.includes(:tags, :notes).where().order('created_at DESC')
-    # end
-
-    @posts = Post.order('created_at DESC')
+    else
+      @posts = Post.includes(:tags, :notes).where(:author => current_user.followeds).order('created_at DESC')
+    end
   end
 
   def show

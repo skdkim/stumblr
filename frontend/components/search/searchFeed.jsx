@@ -28,7 +28,7 @@ var SearchFeed = React.createClass({
   render: function() {
     return (
       <div>
-        {this.props.posts.map(function(post) {
+        {this.state.posts.map(function(post) {
           return <BlogItem id={post.id} post={post}/>;
         })}
       </div>

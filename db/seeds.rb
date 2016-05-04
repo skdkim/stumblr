@@ -10,7 +10,6 @@ User.create(
   username: 'robicha',
   blog_title: 'ROBICHA',
   blog_description: 'ryan. 21. nyc. pratt student.',
-  photo_id: 1,
   password_digest: BCrypt::Password.create('ilovedogs'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229577/tumblr_o6h6fqU9ae1qasnrqo1_1280_koel9f.jpg"
@@ -19,7 +18,6 @@ User.create(
   username: 'charlieadam',
   blog_title: 'colorado dreamin\'',
   blog_description: 'photos and thoughts from a boy in denver',
-  photo_id: 2,
   password_digest: BCrypt::Password.create('denverforever'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229733/15244718916_e790edd86c_q_ownptz.jpg"
@@ -27,7 +25,6 @@ User.create(
 User.create(
   username: 'ninahill',
   blog_title: 'Nina Hill Photography',
-  photo_id: 3,
   password_digest: BCrypt::Password.create('aperture'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462230176/photoicon_kjmwwo.jpg"
@@ -36,7 +33,6 @@ User.create(
   username: 'essiesh',
   blog_title: 'cats and queers',
   blog_description: 'essie, she/her, chicago. a lot of cats and coffee.',
-  photo_id: 4,
   password_digest: BCrypt::Password.create('aviously'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229746/7057493203_04039ff722_q_ffbl2j.jpg"
@@ -45,7 +41,6 @@ User.create(
   username: 'urbansketching',
   blog_title: 'Urban Sketching',
   blog_description: 'sketches done in any medium on-location, submitted by artists around the world',
-  photo_id: 5,
   password_digest: BCrypt::Password.create('microns4life'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229469/15651153332_f359e9c425_q_ezpr67.jpg"
@@ -54,7 +49,6 @@ User.create(
   username: 'medium-design',
   blog_title: 'Medium Design',
   blog_description: 'minimalist design studio located in calgary',
-  photo_id: 6,
   password_digest: BCrypt::Password.create('sominimal'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229456/11815476314_96e8c9c369_q_kqjl1g.jpg"
@@ -63,7 +57,6 @@ User.create(
   username: 'househunter',
   blog_title: 'Houses to Covet',
   blog_description: 'beautiful and inspiring houses around the globe',
-  photo_id: 7,
   password_digest: BCrypt::Password.create('househunters'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462236009/icon2_ltf7zt.jpg"
@@ -72,7 +65,6 @@ User.create(
   username: 'doubleu',
   blog_title: 'Double U',
   blog_description: 'Women\'s art, coding, and otherwise creative center in San Francisco',
-  photo_id: 8,
   password_digest: BCrypt::Password.create('doublerainbowtho'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229306/26157592854_6260be676d_q_hxhn7u.jpg"
@@ -81,7 +73,6 @@ User.create(
   username: 'planergoods',
   blog_title: 'planer goods',
   blog_description: 'custom wooden goods from a studio in lansing, mi',
-  photo_id: 9,
   password_digest: BCrypt::Password.create('woodchips'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229398/5339452080_ebb69190fe_q_mp5x2b.jpg"
@@ -90,13 +81,106 @@ User.create(
   username: 'streetwares',
   blog_title: 'STREETWARES',
   blog_description: 'urban. fashion. photography.',
-  photo_id: 10,
   password_digest: BCrypt::Password.create('quashie'),
   session_token: SecureRandom.urlsafe_base64(16),
   profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462229008/tumblr_nl4b8jwAT31qd9ql4o1_r1_1280_hltuzu.jpg"
 )
+User.create(
+  username: 'guest',
+  blog_title: 'Guest User',
+  blog_description: 'just here stumbling upon cool blogs',
+  password_digest: BCrypt::Password.create('guestlogin'),
+  session_token: SecureRandom.urlsafe_base64(16),
+  profile_image_url: "http://res.cloudinary.com/dn07p1frq/image/upload/c_crop,h_539,w_505/v1462399303/self_portrait_photography_durham_nc-2_t8bbjq.jpg"
+)
 
 
+Follow.create(follower_id: 11, followed_id: 1)
+Follow.create(follower_id: 11, followed_id: 2)
+Follow.create(follower_id: 11, followed_id: 3)
+Follow.create(follower_id: 11, followed_id: 4)
+Follow.create(follower_id: 11, followed_id: 5)
+Follow.create(follower_id: 11, followed_id: 6)
+Follow.create(follower_id: 11, followed_id: 7)
+Follow.create(follower_id: 11, followed_id: 8)
+Follow.create(follower_id: 11, followed_id: 9)
+Follow.create(follower_id: 11, followed_id: 10)
+Follow.create(follower_id: 1, followed_id: 2)
+Follow.create(follower_id: 1, followed_id: 4)
+Follow.create(follower_id: 1, followed_id: 5)
+Follow.create(follower_id: 1, followed_id: 6)
+Follow.create(follower_id: 1, followed_id: 8)
+Follow.create(follower_id: 1, followed_id: 9)
+Follow.create(follower_id: 1, followed_id: 10)
+Follow.create(follower_id: 2, followed_id: 1)
+Follow.create(follower_id: 2, followed_id: 2)
+Follow.create(follower_id: 2, followed_id: 3)
+Follow.create(follower_id: 2, followed_id: 6)
+Follow.create(follower_id: 2, followed_id: 7)
+Follow.create(follower_id: 2, followed_id: 9)
+Follow.create(follower_id: 3, followed_id: 3)
+Follow.create(follower_id: 3, followed_id: 5)
+Follow.create(follower_id: 3, followed_id: 6)
+Follow.create(follower_id: 3, followed_id: 7)
+Follow.create(follower_id: 3, followed_id: 9)
+Follow.create(follower_id: 3, followed_id: 10)
+Follow.create(follower_id: 4, followed_id: 1)
+Follow.create(follower_id: 4, followed_id: 3)
+Follow.create(follower_id: 4, followed_id: 4)
+Follow.create(follower_id: 4, followed_id: 7)
+Follow.create(follower_id: 5, followed_id: 1)
+Follow.create(follower_id: 5, followed_id: 2)
+Follow.create(follower_id: 5, followed_id: 3)
+Follow.create(follower_id: 5, followed_id: 5)
+Follow.create(follower_id: 5, followed_id: 6)
+Follow.create(follower_id: 5, followed_id: 8)
+Follow.create(follower_id: 5, followed_id: 9)
+Follow.create(follower_id: 5, followed_id: 10)
+Follow.create(follower_id: 6, followed_id: 3)
+Follow.create(follower_id: 6, followed_id: 4)
+Follow.create(follower_id: 6, followed_id: 7)
+Follow.create(follower_id: 6, followed_id: 9)
+Follow.create(follower_id: 7, followed_id: 1)
+Follow.create(follower_id: 7, followed_id: 2)
+Follow.create(follower_id: 7, followed_id: 4)
+Follow.create(follower_id: 7, followed_id: 6)
+Follow.create(follower_id: 7, followed_id: 8)
+Follow.create(follower_id: 7, followed_id: 10)
+Follow.create(follower_id: 8, followed_id: 1)
+Follow.create(follower_id: 8, followed_id: 2)
+Follow.create(follower_id: 8, followed_id: 3)
+Follow.create(follower_id: 8, followed_id: 4)
+Follow.create(follower_id: 8, followed_id: 6)
+Follow.create(follower_id: 8, followed_id: 7)
+Follow.create(follower_id: 8, followed_id: 9)
+Follow.create(follower_id: 9, followed_id: 5)
+Follow.create(follower_id: 9, followed_id: 6)
+Follow.create(follower_id: 9, followed_id: 7)
+Follow.create(follower_id: 9, followed_id: 8)
+Follow.create(follower_id: 9, followed_id: 9)
+Follow.create(follower_id: 9, followed_id: 10)
+Follow.create(follower_id: 10, followed_id: 1)
+Follow.create(follower_id: 10, followed_id: 2)
+Follow.create(follower_id: 10, followed_id: 3)
+Follow.create(follower_id: 10, followed_id: 4)
+Follow.create(follower_id: 10, followed_id: 6)
+Follow.create(follower_id: 10, followed_id: 7)
+Follow.create(follower_id: 10, followed_id: 8)
+Follow.create(follower_id: 10, followed_id: 9)
+Follow.create(follower_id: 10, followed_id: 10)
+
+
+
+
+Tag.create(tag: "art")
+Tag.create(tag: "photo")
+Tag.create(tag: "sketch")
+Tag.create(tag: "design")
+Tag.create(tag: "music")
+Tag.create(tag: "new york")
+Tag.create(tag: "beyonce")
+Tag.create(tag: "woodworking")
+Tag.create(tag: "poem")
 
 
 
@@ -106,6 +190,20 @@ Post.create(
   author_id: 5
 )
 
+Tagging.create(
+  post_id: 1,
+  tag_id: 1
+)
+Tagging.create(
+  post_id: 1,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 1,
+  tag_id: 3
+)
+
+
 Post.create(
   post_type: "audio",
   title: "Beyonce",
@@ -113,6 +211,16 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/video/upload/v1462209757/04_Sorry_p2gsso.m4a",
   author_id: 2
 )
+
+Tagging.create(
+  post_id: 2,
+  tag_id: 7
+)
+Tagging.create(
+  post_id: 2,
+  tag_id: 5
+)
+
 
 
 Post.create(
@@ -127,6 +235,15 @@ post_type: "photo",
 title: 'Seattle Modern',
 content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209586/Genesee-Townhomes-Seattle_1_wcehh1.jpg",
 author_id: 7
+)
+
+Tagging.create(
+  post_id: 4,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 4,
+  tag_id: 4
 )
 
 Post.create(
@@ -151,6 +268,15 @@ Post.create(
   author_id: 6
 )
 
+Tagging.create(
+  post_id: 7,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 7,
+  tag_id: 4
+)
+
 Post.create(
   post_type: "photo",
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462215120/business_colors_tamtmn.jpg",
@@ -164,12 +290,38 @@ Post.create(
   author_id: 5
 )
 
+Tagging.create(
+  post_id: 9,
+  tag_id: 1
+)
+Tagging.create(
+  post_id: 9,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 9,
+  tag_id: 3
+)
+
 
 Post.create(
   post_type: "photo",
   body: "We'll have this piece and a few others at the Renegade Craft Fair next weekend.",
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462221561/tumblr_nz3h31w9I61rqt26yo1_500_g8sl7u.jpg",
   author_id: 9
+)
+
+Tagging.create(
+  post_id: 10,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 10,
+  tag_id: 4
+)
+Tagging.create(
+  post_id: 10,
+  tag_id: 8
 )
 
 
@@ -179,6 +331,17 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209354/tumblr_o1dx47VPoL1qkohe4o1_1280_pid7km.jpg",
   author_id: 1
 )
+
+Tagging.create(
+  post_id: 11,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 11,
+  tag_id: 6
+)
+
+
 
 Post.create(
   post_type: "photo",
@@ -193,6 +356,12 @@ Post.create(
   author_id: 9
 )
 
+Tagging.create(
+  post_id: 13,
+  tag_id: 8
+)
+
+
 
 Post.create(
   post_type: "audio",
@@ -201,6 +370,12 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/video/upload/v1462209791/The_Weight_Of_Us_ouqodm.mp3",
   author_id: 4
 )
+
+Tagging.create(
+  post_id: 14,
+  tag_id: 5
+)
+
 
 
 Post.create(
@@ -216,6 +391,16 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209567/tumblr_o39q3enjbH1rvh1ydo1_1280_pifrn3.jpg",
   author_id: 6
 )
+
+Tagging.create(
+  post_id: 16,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 16,
+  tag_id: 4
+)
+
 
 
 Post.create(
@@ -245,6 +430,16 @@ Post.create(
   author_id: 6
 )
 
+Tagging.create(
+  post_id: 20,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 20,
+  tag_id: 4
+)
+
+
 
 Post.create(
   post_type: "audio",
@@ -253,6 +448,12 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/video/upload/v1462214646/forlucy_ojlkux.mp3",
   author_id: 8
 )
+
+Tagging.create(
+  post_id: 21,
+  tag_id: 5
+)
+
 
 
 Post.create(
@@ -281,6 +482,18 @@ Post.create(
   author_id: 6
 )
 
+Tagging.create(
+  post_id: 25,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 25,
+  tag_id: 4
+)
+
+
+
+
 Post.create(
   post_type: "link",
   title: "How to Buy a House",
@@ -301,6 +514,12 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462215424/IMG_5914_cbjuuj.jpg",
   author_id: 9
 )
+
+Tagging.create(
+  post_id: 28,
+  tag_id: 8
+)
+
 
 
 Post.create(
@@ -324,6 +543,19 @@ Post.create(
   body: 'By Lee Yong-hwan in Seoul, Korea',
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209216/25EB_258D_2595_25EC_2588_2598_25EA_25B6_25811_dco0sj.jpg",
   author_id: 5
+)
+
+Tagging.create(
+  post_id: 31,
+  tag_id: 1
+)
+Tagging.create(
+  post_id: 31,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 31,
+  tag_id: 3
 )
 
 
@@ -351,12 +583,35 @@ Post.create(
   author_id: 7
 )
 
+Tagging.create(
+  post_id: 34,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 34,
+  tag_id: 4
+)
+
+
+
+
 Post.create(
   post_type: "photo",
   body: "Some inspiration from our friends at Brooklyn-based Bellboy",
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462215416/Bellboy_20Familj_005_ba0clf.jpg",
   author_id: 9
 )
+
+Tagging.create(
+  post_id: 35,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 35,
+  tag_id: 4
+)
+
+
 
 
 Post.create(
@@ -365,6 +620,21 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209325/6394503361_da438fe112_z_jfa4ei.jpg",
   author_id: 5
 )
+
+Tagging.create(
+  post_id: 36,
+  tag_id: 1
+)
+Tagging.create(
+  post_id: 36,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 36,
+  tag_id: 3
+)
+
+
 
 Post.create(
   post_type: "photo",
@@ -396,6 +666,14 @@ Post.create(
   author_id: 4
 )
 
+Tagging.create(
+  post_id: 38,
+  tag_id: 9
+)
+
+
+
+
 Post.create(
   post_type: "photo",
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209399/tumblr_o0im7nBS0V1u7w7kwo1_1280_swwift.jpg",
@@ -410,6 +688,11 @@ Post.create(
   author_id: 8
 )
 
+Tagging.create(
+  post_id: 40,
+  tag_id: 5
+)
+
 
 
 Post.create(
@@ -418,6 +701,18 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209547/tumblr_o4s19v4xwP1rvh1ydo1_1280_hevpxm.jpg",
   author_id: 6
 )
+
+Tagging.create(
+  post_id: 41,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 41,
+  tag_id: 4
+)
+
+
+
 
 Post.create(
   post_type: "quote",
@@ -440,6 +735,16 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462221439/IMG_5644_bv0gcp.jpg",
   author_id: 9
 )
+
+Tagging.create(
+  post_id: 44,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 44,
+  tag_id: 8
+)
+
 
 
 Post.create(
@@ -469,6 +774,19 @@ Post.create(
   author_id: 5
 )
 
+Tagging.create(
+  post_id: 48,
+  tag_id: 1
+)
+Tagging.create(
+  post_id: 48,
+  tag_id: 2
+)
+Tagging.create(
+  post_id: 48,
+  tag_id: 3
+)
+
 
 Post.create(
   post_type: "photo",
@@ -477,6 +795,14 @@ Post.create(
   author_id: 7
 )
 
+Tagging.create(
+  post_id: 49,
+  tag_id: 2
+)
+
+
+
+
 Post.create(
   post_type: "audio",
   title: "Rhye",
@@ -484,3 +810,200 @@ Post.create(
   content_url: "http://res.cloudinary.com/dn07p1frq/video/upload/v1462215859/01_Open_wz1i8n.m4a",
   author_id: 1
 )
+
+Tagging.create(
+  post_id: 50,
+  tag_id: 5
+)
+
+
+
+
+
+
+
+
+Like.create(user_id: 1, post_id: 1)
+Like.create(user_id: 1, post_id: 3)
+Like.create(user_id: 1, post_id: 4)
+Like.create(user_id: 1, post_id: 5)
+Like.create(user_id: 1, post_id: 8)
+Like.create(user_id: 1, post_id: 10)
+Like.create(user_id: 1, post_id: 22)
+Like.create(user_id: 1, post_id: 25)
+Like.create(user_id: 1, post_id: 26)
+Like.create(user_id: 1, post_id: 34)
+Like.create(user_id: 1, post_id: 37)
+Like.create(user_id: 1, post_id: 42)
+Like.create(user_id: 1, post_id: 49)
+Like.create(user_id: 2, post_id: 5)
+Like.create(user_id: 2, post_id: 7)
+Like.create(user_id: 2, post_id: 9)
+Like.create(user_id: 2, post_id: 14)
+Like.create(user_id: 2, post_id: 16)
+Like.create(user_id: 2, post_id: 19)
+Like.create(user_id: 2, post_id: 23)
+Like.create(user_id: 2, post_id: 27)
+Like.create(user_id: 2, post_id: 30)
+Like.create(user_id: 2, post_id: 33)
+Like.create(user_id: 2, post_id: 37)
+Like.create(user_id: 2, post_id: 39)
+Like.create(user_id: 2, post_id: 41)
+Like.create(user_id: 2, post_id: 44)
+Like.create(user_id: 2, post_id: 46)
+Like.create(user_id: 2, post_id: 48)
+Like.create(user_id: 3, post_id: 2)
+Like.create(user_id: 3, post_id: 7)
+Like.create(user_id: 3, post_id: 9)
+Like.create(user_id: 3, post_id: 12)
+Like.create(user_id: 3, post_id: 15)
+Like.create(user_id: 3, post_id: 18)
+Like.create(user_id: 3, post_id: 21)
+Like.create(user_id: 3, post_id: 28)
+Like.create(user_id: 3, post_id: 36)
+Like.create(user_id: 3, post_id: 40)
+Like.create(user_id: 3, post_id: 42)
+Like.create(user_id: 3, post_id: 50)
+Like.create(user_id: 4, post_id: 1)
+Like.create(user_id: 4, post_id: 4)
+Like.create(user_id: 4, post_id: 5)
+Like.create(user_id: 4, post_id: 8)
+Like.create(user_id: 4, post_id: 10)
+Like.create(user_id: 4, post_id: 13)
+Like.create(user_id: 4, post_id: 15)
+Like.create(user_id: 4, post_id: 16)
+Like.create(user_id: 4, post_id: 19)
+Like.create(user_id: 4, post_id: 23)
+Like.create(user_id: 4, post_id: 26)
+Like.create(user_id: 4, post_id: 27)
+Like.create(user_id: 4, post_id: 29)
+Like.create(user_id: 4, post_id: 31)
+Like.create(user_id: 4, post_id: 32)
+Like.create(user_id: 4, post_id: 34)
+Like.create(user_id: 4, post_id: 36)
+Like.create(user_id: 4, post_id: 37)
+Like.create(user_id: 4, post_id: 39)
+Like.create(user_id: 4, post_id: 40)
+Like.create(user_id: 4, post_id: 41)
+Like.create(user_id: 4, post_id: 43)
+Like.create(user_id: 4, post_id: 44)
+Like.create(user_id: 4, post_id: 45)
+Like.create(user_id: 4, post_id: 47)
+Like.create(user_id: 4, post_id: 48)
+Like.create(user_id: 4, post_id: 49)
+Like.create(user_id: 4, post_id: 50)
+Like.create(user_id: 5, post_id: 2)
+Like.create(user_id: 5, post_id: 3)
+Like.create(user_id: 5, post_id: 6)
+Like.create(user_id: 5, post_id: 8)
+Like.create(user_id: 5, post_id: 11)
+Like.create(user_id: 5, post_id: 14)
+Like.create(user_id: 5, post_id: 16)
+Like.create(user_id: 5, post_id: 22)
+Like.create(user_id: 5, post_id: 26)
+Like.create(user_id: 5, post_id: 28)
+Like.create(user_id: 5, post_id: 29)
+Like.create(user_id: 5, post_id: 31)
+Like.create(user_id: 5, post_id: 33)
+Like.create(user_id: 5, post_id: 34)
+Like.create(user_id: 5, post_id: 36)
+Like.create(user_id: 5, post_id: 37)
+Like.create(user_id: 5, post_id: 44)
+Like.create(user_id: 5, post_id: 45)
+Like.create(user_id: 5, post_id: 46)
+Like.create(user_id: 5, post_id: 48)
+Like.create(user_id: 5, post_id: 49)
+Like.create(user_id: 6, post_id: 1)
+Like.create(user_id: 6, post_id: 2)
+Like.create(user_id: 6, post_id: 3)
+Like.create(user_id: 6, post_id: 4)
+Like.create(user_id: 6, post_id: 9)
+Like.create(user_id: 6, post_id: 13)
+Like.create(user_id: 6, post_id: 15)
+Like.create(user_id: 6, post_id: 17)
+Like.create(user_id: 6, post_id: 19)
+Like.create(user_id: 6, post_id: 22)
+Like.create(user_id: 6, post_id: 25)
+Like.create(user_id: 6, post_id: 27)
+Like.create(user_id: 6, post_id: 29)
+Like.create(user_id: 6, post_id: 33)
+Like.create(user_id: 6, post_id: 35)
+Like.create(user_id: 6, post_id: 37)
+Like.create(user_id: 6, post_id: 39)
+Like.create(user_id: 6, post_id: 44)
+Like.create(user_id: 6, post_id: 45)
+Like.create(user_id: 6, post_id: 48)
+Like.create(user_id: 6, post_id: 50)
+Like.create(user_id: 7, post_id: 2)
+Like.create(user_id: 7, post_id: 3)
+Like.create(user_id: 7, post_id: 5)
+Like.create(user_id: 7, post_id: 7)
+Like.create(user_id: 7, post_id: 9)
+Like.create(user_id: 7, post_id: 10)
+Like.create(user_id: 7, post_id: 22)
+Like.create(user_id: 7, post_id: 25)
+Like.create(user_id: 7, post_id: 27)
+Like.create(user_id: 7, post_id: 29)
+Like.create(user_id: 7, post_id: 33)
+Like.create(user_id: 7, post_id: 34)
+Like.create(user_id: 7, post_id: 37)
+Like.create(user_id: 7, post_id: 39)
+Like.create(user_id: 7, post_id: 41)
+Like.create(user_id: 7, post_id: 43)
+Like.create(user_id: 7, post_id: 44)
+Like.create(user_id: 7, post_id: 47)
+Like.create(user_id: 7, post_id: 50)
+Like.create(user_id: 8, post_id: 1)
+Like.create(user_id: 8, post_id: 3)
+Like.create(user_id: 8, post_id: 4)
+Like.create(user_id: 8, post_id: 7)
+Like.create(user_id: 8, post_id: 9)
+Like.create(user_id: 8, post_id: 13)
+Like.create(user_id: 8, post_id: 15)
+Like.create(user_id: 8, post_id: 17)
+Like.create(user_id: 8, post_id: 20)
+Like.create(user_id: 8, post_id: 33)
+Like.create(user_id: 8, post_id: 36)
+Like.create(user_id: 8, post_id: 38)
+Like.create(user_id: 8, post_id: 41)
+Like.create(user_id: 8, post_id: 44)
+Like.create(user_id: 8, post_id: 45)
+Like.create(user_id: 8, post_id: 47)
+Like.create(user_id: 8, post_id: 49)
+Like.create(user_id: 9, post_id: 3)
+Like.create(user_id: 9, post_id: 16)
+Like.create(user_id: 9, post_id: 18)
+Like.create(user_id: 9, post_id: 22)
+Like.create(user_id: 9, post_id: 24)
+Like.create(user_id: 9, post_id: 27)
+Like.create(user_id: 9, post_id: 33)
+Like.create(user_id: 9, post_id: 45)
+Like.create(user_id: 9, post_id: 49)
+Like.create(user_id: 9, post_id: 50)
+Like.create(user_id: 10, post_id: 2)
+Like.create(user_id: 10, post_id: 4)
+Like.create(user_id: 10, post_id: 15)
+Like.create(user_id: 10, post_id: 20)
+Like.create(user_id: 10, post_id: 23)
+Like.create(user_id: 10, post_id: 25)
+Like.create(user_id: 10, post_id: 28)
+Like.create(user_id: 10, post_id: 37)
+Like.create(user_id: 10, post_id: 39)
+Like.create(user_id: 10, post_id: 40)
+Like.create(user_id: 10, post_id: 41)
+Like.create(user_id: 10, post_id: 42)
+Like.create(user_id: 11, post_id: 4)
+Like.create(user_id: 11, post_id: 7)
+Like.create(user_id: 11, post_id: 13)
+Like.create(user_id: 11, post_id: 15)
+Like.create(user_id: 11, post_id: 19)
+Like.create(user_id: 11, post_id: 22)
+Like.create(user_id: 11, post_id: 24)
+Like.create(user_id: 11, post_id: 29)
+Like.create(user_id: 11, post_id: 33)
+Like.create(user_id: 11, post_id: 36)
+Like.create(user_id: 11, post_id: 38)
+Like.create(user_id: 11, post_id: 41)
+Like.create(user_id: 11, post_id: 44)
+Like.create(user_id: 11, post_id: 47)
+Like.create(user_id: 11, post_id: 50)
