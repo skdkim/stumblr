@@ -9,9 +9,10 @@ class Api::PostsController < ApplicationController
       render 'api/users/show'
     else
       render json: ["unsuccessful post"], status: 422
+    end
   end
 
   def destroy
-    
+
   end
 end
