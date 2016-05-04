@@ -24,6 +24,7 @@ class Api::LikesController < ApplicationController
     else
       @errors = @like.errors.full_messages
       render 'api/shared/error', status: 422
+    end
   end
 
   private
