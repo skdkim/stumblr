@@ -49,10 +49,10 @@ UserStore.__onDispatch = function(payload) {
       updateErrors(payload.errors);
       break;
     case LikeConstants.LIKE_RECEIVED:
-      addLike(payload.like.postId)
+      addLike(payload.like.post_id);
       break;
     case LikeConstants.LIKE_REMOVED:
-      removeLike(payload.like.postId)
+      removeLike(payload.like.post_id);
       break;
   }
   this.__emitChange();

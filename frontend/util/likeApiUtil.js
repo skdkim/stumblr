@@ -1,5 +1,5 @@
 module.exports = {
-  receiveLike: function(like, success) {
+  createLike: function(like, success) {
     $.ajax({
       method: 'POST',
       url: 'api/likes',

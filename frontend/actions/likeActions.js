@@ -3,12 +3,12 @@ var LikeConstants = require('../constants/likeConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var LikeActions = {
-  createLike: function(like) {
-    LikeApiUtil.createLike(like, this.receiveLike);
+  createLike: function(likeData) {
+    LikeApiUtil.createLike(likeData, this.receiveLike);
   },
 
-  deleteLike: function(like) {
-    LikeApiUtil.deleteLike(like, this.removeLike);
+  deleteLike: function(likeData) {
+    LikeApiUtil.deleteLike(likeData, this.removeLike);
   },
 
 

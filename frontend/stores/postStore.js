@@ -62,10 +62,10 @@ PostStore.__onDispatch = function(payload) {
       updateErrors(payload.errors);
       break;
     case LikeConstants.LIKE_RECEIVED:
-      addLike(payload.like.postId, payload.like.userId);
+      addLike(payload.like.post_id, payload.like.user_id);
       break;
     case LikeConstants.LIKE_REMOVED:
-      removeLike(payload.like.postId, payload.like.userId);
+      removeLike(payload.like.post_id, payload.like.user_id);
       break;
   }
   this.__emitChange();

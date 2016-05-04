@@ -1,11 +1,11 @@
 ## Questions
 
 - how to get regular mac finder uploader rather than cloudinary's form
-- how to get follow id for unfollow
 - how to get user from url params id
 - where to pass param to posts controller so that returns correct post collection
 - FILTERING
 - search feed - `this.props.posts` undefined
+- reblogging breaks like functionality
 
 ## In Progress
 

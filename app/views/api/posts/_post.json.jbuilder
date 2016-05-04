@@ -7,3 +7,6 @@ end
 json.tags do
   json.array! post.tags
 end
+json.liking_users do
+  json.array! post.liking_users
+end

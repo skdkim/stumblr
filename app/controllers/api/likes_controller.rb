@@ -9,7 +9,7 @@ class Api::LikesController < ApplicationController
       render 'api/likes/show'
     else
       @errors = @like.errors.full_messages
-      render 'api/shared/error', status: 422
+      render 'api/shared/errors', status: 422
     end
   end
 
@@ -19,16 +19,16 @@ class Api::LikesController < ApplicationController
       post_id: likes_params[:post_id]
     )
 
-    if @favorite.destroy
+    if @like.destroy
       render 'api/likes/show'
     else
       @errors = @like.errors.full_messages
-      render 'api/shared/error', status: 422
+      render 'api/shared/errors', status: 422
     end
   end
 
   private
   def likes_params
-    params.require[:like].permit[:post_id]
+    params.require(:like).permit(:post_id)
   end
 end

@@ -1,6 +1,7 @@
 var React = require('react');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
 var PostAPIUtil = require('../../util/postsApiUtil');
+var LikeActions = require('../../actions/likeActions');
 var HashHistory = require('react-router').hashHistory;
 
 var PostFeedItem = React.createClass({
@@ -86,7 +87,7 @@ var PostFeedItem = React.createClass({
   },
 
   postNav: function() {
-    var noteCount = this.props.post.notes.length;
+    var noteCount = this.props.post.liking_users.length;
     return (
       <div className="post-bar post-nav">
         <p>{noteCount} notes</p>
@@ -107,8 +108,8 @@ var PostFeedItem = React.createClass({
             :
               <img
                 className="post-nav-icon-small"
-                src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartgray_selz14.jpg"
-                onClick={this.like}>
+                src={this.likeIcon()}
+                onClick={this.toggleLike}>
               </img>
           }
         </p>
@@ -118,6 +119,36 @@ var PostFeedItem = React.createClass({
 //  colored heart for later
 // <img className="post-nav-icon" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartcolor_skwnkr.jpg"></img>
 
+
+  isLiked: function() {
+    var currentUser = this.state.currentUser;
+    if (currentUser) {
+      var likedPosts = currentUser.liked_posts;
+      if (likedPosts.indexOf(this.props.post.id) > -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
+
+  likeIcon: function() {
+    if (this.isLiked()) {
+      return "http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartcolor_skwnkr.jpg";
+    } else {
+      return "http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartgray_selz14.jpg";
+    }
+  },
+
+  toggleLike: function() {
+    var likeData = {post_id: this.props.post.id};
+
+    if (this.isLiked()) {
+      LikeActions.deleteLike(likeData);
+    } else {
+      LikeActions.createLike(likeData);
+    }
+  },
 
   pushToBlog: function() {
     HashHistory.push('/users/' + this.props.post.author.id);
@@ -129,10 +160,6 @@ var PostFeedItem = React.createClass({
     rebloggedPost.original_author = rebloggedPost.author;
     rebloggedPost.author = this.state.currentUser;
     PostAPIUtil.createPost(rebloggedPost);
-  },
-
-  like: function() {
-
   },
 
   delete: function() {
