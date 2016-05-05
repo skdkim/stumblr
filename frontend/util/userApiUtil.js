@@ -14,6 +14,19 @@ module.exports = {
     });
   },
 
+  fetchAuthor: function(id) {
+    $.ajax({
+      method: 'GET',
+      url: 'api/user',
+      data: {id: id},
+      success: function(author) {
+        UserServerActions.receiveAuthor(author);
+      },
+      error: function(error) {
+        UserServerActions.handleError(error);
+      }
+    });  },
+
   login: function(user) {
     $.ajax({
       method: 'POST',

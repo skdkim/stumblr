@@ -3,6 +3,13 @@ var UserConstants = require('../../constants/userConstants');
 var Dispatcher = require('../../dispatcher/dispatcher');
 
  module.exports = {
+   receiveAuthor: function(author) {
+     Dispatcher.dispatch({
+       actionType: UserConstants.AUTHOR_RECEIVED,
+       author: author
+     });
+   },
+
    receiveCurrentUser: function(user) {
      Dispatcher.dispatch({
        actionType: UserConstants.LOGIN,

@@ -63,11 +63,13 @@ class Api::PostsController < ApplicationController
   def index
     if params[:searchInput]
       @posts = Tag.find_by(tag: params[:searchInput]).posts.order('created_at DESC')
-    # elsif params[:explore]
-    #   @posts = Post.includes(:tags, :notes).order('created_at DESC')
+    elsif params[:authorId]
+      @posts = Post.where(author_id: params[:authorId]).order('created_at DESC')
     else
-      if (current_user)
+      if !params[:explore]
         @posts = Post.includes(:tags, :notes).where(:author => current_user.followeds).order('created_at DESC')
+        own_posts = Post.includes(:tags, :notes).where(author: current_user)
+        @posts = @posts.concat(own_posts)
       else
         @posts = Post.includes(:tags, :notes).order('created_at DESC')
       end

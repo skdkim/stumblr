@@ -8,7 +8,7 @@ var NavBar = React.createClass({
   mixins: [CurrentUserStateMixin],
 
   pushToProfile: function() {
-    HashHistory.push('/users/' + this.state.currentUser.username);
+    HashHistory.push('/users/' + this.state.currentUser.id);
   },
 
   pushToDash: function() {

@@ -12,7 +12,6 @@ var React = require('react');
  var LoginForm = require('./components/user/loginForm');
  var SignUpForm = require('./components/user/signUpForm');
  var Blog = require('./components/blogs/blog');
- // var PostForm = require('./components/posts/postForm');
  var PostsFeed = require('./components/posts/postsFeed');
  var PostsFeedItem = require('./components/posts/postsFeedItem');
  var PostsGenerator = require('./components/posts/postsGenerator');

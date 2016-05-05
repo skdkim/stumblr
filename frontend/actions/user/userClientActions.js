@@ -5,8 +5,8 @@ module.exports = {
     UserApiUtil.fetchCurrentUser();
   },
 
-  guestLogin: function() {
-    this.login({username: "guest", password: "password"});
+  fetchAuthor: function(id) {
+    UserApiUtil.fetchAuthor(id);
   },
 
   login: function(user) {

@@ -1,4 +1,4 @@
-json.extract! @user, :username, :id, :profile_image_url
+json.extract! @user, :username, :id, :profile_image_url, :blog_title, :blog_description
 
 json.liked_posts @user.liked_posts.map { |post| post.id }
 

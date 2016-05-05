@@ -5,12 +5,17 @@ var FollowConstants = require('../constants/followConstants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var _currentUser;
+var _author;
 var _authErrors = [];
 
 var UserStore = new Store(Dispatcher);
 
 UserStore.currentUser = function() {
   return _currentUser;
+};
+
+UserStore.author = function() {
+  return _author;
 };
 
 UserStore.authErrors = function() {
@@ -23,6 +28,10 @@ var addUser = function(user) {
 
 var removeUser = function() {
   _currentUser = null;
+};
+
+var updateAuthor = function(author) {
+  _author = author;
 };
 
 var addLike = function(postId) {
@@ -57,6 +66,9 @@ UserStore.__onDispatch = function(payload) {
       break;
     case UserConstants.ERRORS:
       updateErrors(payload.errors);
+      break;
+    case UserConstants.AUTHOR_RECEIVED:
+      updateAuthor(payload.author);
       break;
     case LikeConstants.LIKE_RECEIVED:
       addLike(payload.like.post_id);

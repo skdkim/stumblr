@@ -1,10 +1,11 @@
 var PostServerActions = require('../actions/posts/postServerActions.js');
 
 module.exports = {
-  fetchPosts: function() {
+  fetchPosts: function(params) {
     $.ajax({
       method: 'GET',
       url: 'api/posts',
+      data: params,
       success: function(posts) {
         PostServerActions.receivePosts(posts);
       },

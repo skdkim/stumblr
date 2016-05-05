@@ -74,8 +74,14 @@ var PhotoForm = React.createClass({
       <div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
 
-          <input className="upload-button" type="submit"
-            value="Upload Image" onClick={this.upload}></input>
+          {this.state.content_url === ""
+            ?
+              <input className="upload-button" type="submit"
+                value="Upload Image" onClick={this.upload}></input>
+            :
+              <input className="upload-button uploaded" type="submit"
+                value="Change Uploaded Image" onClick={this.upload}></input>
+          }
 
           <input className="caption-input" type="textarea" value={this.state.body}
             placeholder="Caption" onChange={this.updateBody}></input>
@@ -94,7 +100,6 @@ var PhotoForm = React.createClass({
   }
  });
 
-// TODO: add photo upload link to cloudinary
 
 
  module.exports = PhotoForm;

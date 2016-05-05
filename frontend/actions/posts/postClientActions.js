@@ -1,8 +1,8 @@
 var PostApiUtil = require('../../util/postsApiUtil.js');
 
 module.exports = {
-  fetchPosts: function() {
-    PostApiUtil.fetchPosts();
+  fetchPosts: function(params) {
+    PostApiUtil.fetchPosts(params);
   },
 
   getPost: function(id) {

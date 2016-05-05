@@ -11,14 +11,20 @@
 - ~~search feed - `this.props.posts` undefined~~
   - it's `this.state.posts`!
 - ~~reblogging breaks like functionality~~
-- new posts don't persist after refresh even though server shows them as committed
-- upload buttons don't appear on heroku version even though working fine on local version
+- ~~new posts don't persist after refresh even though server shows them as committed~~
+  - LOL the guest account wasn't following itself... fixed to automatically show own posts and no follow button
+- ~~upload buttons don't launch cloudinary widget on heroku version even though working fine on local version~~
+  - had to push the keys up to heroku
+
+
 
 ## In Progress
 
 - ~~seed likes~~
 - `Posts` components
-  - update the photo and audio forms to take an upload
-  - notes!
+  - ~~update the photo and audio forms to take an upload~~
+  - ~~notes!~~
   - filtering within `PostsController` `index`
 - individual blogs
+- ~~show own posts! get rid of follow button for self~~
+- render content url after upload

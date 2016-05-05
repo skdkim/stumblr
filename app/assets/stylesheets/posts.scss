@@ -37,7 +37,6 @@
   border-radius: 3px;
   overflow: hidden;
   margin-right: 10px;
-  // background-position: center center;
 }
 
 .user-photo {
@@ -251,6 +250,10 @@
   background-color: white;
 }
 
+.uploaded {
+  background-color: lightgray;
+}
+
 
 // text form
 
@@ -288,9 +291,6 @@ textarea {
   padding: 10px 15px;
   font-size: 14px;
 }
-
-// TODO: add photo uploader styling
-
 
 
 // quote form
@@ -334,12 +334,6 @@ textarea {
   padding: 10px 15px;
   font-size: 18px;
 }
-
-// TODO: add audio uploader styling
-
-
-
-// video form
 
 
 
@@ -411,6 +405,48 @@ textarea {
   margin: auto;
   position: relative;
   top: 70px;
+}
+
+.blog {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: auto;
+  position: relative;
+  top: 140px;
+}
+
+.blog-info {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 110px;
+  margin: auto;
+  color: white;
+}
+
+.author-photo-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.author-photo {
+  width: inherit;
+  height: auto;
+}
+
+.author-info {
+  margin-top: 15px;
+}
+
+.blog-description {
+  font-weight: lighter;
+  text-align: center;
 }
 
 .blog-item {

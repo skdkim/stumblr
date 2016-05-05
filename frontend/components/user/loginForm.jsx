@@ -55,6 +55,20 @@ var LoginForm = React.createClass({
     });
   },
 
+  guestLogin: function(e) {
+    e.preventDefault();
+
+    UserClientActions.login({
+      username: "guest",
+      password: "guestlogin"
+    });
+
+    this.setState({
+      username: "",
+      password: ""
+    });
+  },
+
   errors: function() {
     return (
       <div className="errors">
@@ -83,6 +97,8 @@ var LoginForm = React.createClass({
             placeholder="password" onChange={this.updatePassword} />
 
           <input className="auth-input submit" type="submit" value="Log In"/>
+          <input className="auth-input guest-login" type="submit"
+            onClick={this.guestLogin} value="Guest Login"/>
         </form>
       </div>
     );

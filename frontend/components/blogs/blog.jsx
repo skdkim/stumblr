@@ -6,6 +6,8 @@ var PostClientActions = require('../../actions/posts/postClientActions');
 var UserClientActions = require('../../actions/user/userClientActions');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
 var HashHistory = require('react-router').hashHistory;
+var Masonry = require('react-masonry-component');
+
 
 var PostsFeed = React.createClass({
   mixins: [CurrentUserStateMixin],
@@ -17,35 +19,59 @@ var PostsFeed = React.createClass({
   },
 
   componentDidMount: function() {
-    PostClientActions.fetchPosts();
-    this.postListener = PostStore.addListener(this._onChange);
+    UserClientActions.fetchAuthor(this.props.params.id);
+    this.authorListener = UserStore.addListener(this._updateAuthor);
+    this.postListener = PostStore.addListener(this._updatePosts);
   },
 
   componentWillUnmount: function() {
     this.postListener.remove();
+    this.authorListener.remove();
   },
 
-  _onChange: function() {
+  _updateAuthor: function() {
+    var author = UserStore.author();
     this.setState({
-      posts: PostStore.all()
+      author: author,
+    });
+    PostClientActions.fetchPosts({authorId: author.id});
+  },
+
+  _updatePosts: function() {
+    this.setState({
+      posts: PostStore.all(),
     });
   },
 
  	render: function () {
-    return (
-      <div className="blog">
-        <div className="blog-info">
-          Blog Info
-          
-        </div>
+    var childElements =
+          this.state.posts.map(function(post) {
+            return <BlogItem id={post.id} post={post}/>;
+          });
 
-        <div className="blog-feed">
-          {this.props.posts.map(function(post){
-            return <BlogItem post={post}/>;
-          })}
-        </div>
-      </div>
-    );
+    if (!this.state.author || !this.state.posts) {
+      return (
+        <div>Loading...</div>
+      );
+    }else {
+      return (
+          <div className="blog-container">
+            <div className="blog-info">
+              <div className="author-photo-container">
+                <img className="author-photo" src={this.state.author.profile_image_url}></img>
+              </div>
+              <div className="author-info">{this.state.author.blog_title}</div>
+              <div className="author-info blog-description">{this.state.author.blog_description}</div>
+            </div>
+            <Masonry
+                className={'blog'}
+                elementType={'div'}
+                disableImagesLoaded={false}>
+                {childElements}
+            </Masonry>
+          </div>
+      );
+    }
  	}
  });
 

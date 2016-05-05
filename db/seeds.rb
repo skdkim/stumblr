@@ -232,7 +232,7 @@ Post.create(
 
 Post.create(
 post_type: "photo",
-title: 'Seattle Modern',
+body: 'Seattle Modern',
 content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209586/Genesee-Townhomes-Seattle_1_wcehh1.jpg",
 author_id: 7
 )
@@ -245,6 +245,22 @@ Tagging.create(
   post_id: 4,
   tag_id: 4
 )
+
+
+
+Post.create(
+post_type: "photo",
+body: 'dream van',
+content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462407941/stumblr/zbqxmqcc65wjdqrno4ib.jpg",
+author_id: 11
+)
+
+Tagging.create(
+  post_id: 5,
+  tag_id: 2
+)
+
+
 
 Post.create(
   post_type: "text",
@@ -269,11 +285,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 7,
+  post_id: 8,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 7,
+  post_id: 8,
   tag_id: 4
 )
 
@@ -291,15 +307,15 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 9,
+  post_id: 10,
   tag_id: 1
 )
 Tagging.create(
-  post_id: 9,
+  post_id: 10,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 9,
+  post_id: 10,
   tag_id: 3
 )
 
@@ -312,15 +328,15 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 10,
+  post_id: 11,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 10,
+  post_id: 11,
   tag_id: 4
 )
 Tagging.create(
-  post_id: 10,
+  post_id: 11,
   tag_id: 8
 )
 
@@ -333,11 +349,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 11,
+  post_id: 12,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 11,
+  post_id: 12,
   tag_id: 6
 )
 
@@ -349,6 +365,14 @@ Post.create(
   author_id: 3
 )
 
+
+Post.create(
+  post_type: "photo",
+  body: "autumn in massachusetts",
+  content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462402816/stumblr/beuqfdg8hiw9e7ccmifj.jpg",
+  author_id: 11
+)
+
 Post.create(
   post_type: "photo",
   body: "Excited to have delivered our custom credenza to its new home yesterday",
@@ -357,7 +381,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 13,
+  post_id: 15,
   tag_id: 8
 )
 
@@ -372,7 +396,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 14,
+  post_id: 16,
   tag_id: 5
 )
 
@@ -393,11 +417,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 16,
+  post_id: 18,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 16,
+  post_id: 18,
   tag_id: 4
 )
 
@@ -431,11 +455,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 20,
+  post_id: 22,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 20,
+  post_id: 22,
   tag_id: 4
 )
 
@@ -450,7 +474,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 21,
+  post_id: 23,
   tag_id: 5
 )
 
@@ -469,6 +493,14 @@ Post.create(
 )
 
 Post.create(
+  post_type: "audio",
+  title: "Alt-J",
+  body: "Tessellate (remix)",
+  content_url: "http://res.cloudinary.com/dn07p1frq/video/upload/v1462402756/alt-j%20-%20tessellate.mp3",
+  author_id: 11
+)
+
+Post.create(
 post_type: "link",
 title: "Stupid Shit No One Needs and Terrible Ideas Hackathon",
 content_url: "https://www.eventbrite.com/e/stupid-shit-no-one-needs-terrible-ideas-hackathon-20-tickets-24538294700",
@@ -483,11 +515,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 25,
+  post_id: 28,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 25,
+  post_id: 28,
   tag_id: 4
 )
 
@@ -516,7 +548,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 28,
+  post_id: 31,
   tag_id: 8
 )
 
@@ -539,22 +571,21 @@ Post.create(
 
 Post.create(
   post_type: "photo",
-  title: 'Deoksugung Art Museum',
-  body: 'By Lee Yong-hwan in Seoul, Korea',
+  body: 'Deoksugung Art Museum, by Lee Yong-hwan in Seoul, Korea',
   content_url: "http://res.cloudinary.com/dn07p1frq/image/upload/v1462209216/25EB_258D_2595_25EC_2588_2598_25EA_25B6_25811_dco0sj.jpg",
   author_id: 5
 )
 
 Tagging.create(
-  post_id: 31,
+  post_id: 34,
   tag_id: 1
 )
 Tagging.create(
-  post_id: 31,
+  post_id: 34,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 31,
+  post_id: 34,
   tag_id: 3
 )
 
@@ -584,11 +615,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 34,
+  post_id: 37,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 34,
+  post_id: 37,
   tag_id: 4
 )
 
@@ -603,11 +634,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 35,
+  post_id: 38,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 35,
+  post_id: 38,
   tag_id: 4
 )
 
@@ -622,17 +653,26 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 36,
+  post_id: 39,
   tag_id: 1
 )
 Tagging.create(
-  post_id: 36,
+  post_id: 39,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 36,
+  post_id: 39,
   tag_id: 3
 )
+
+
+Post.create(
+  post_type: "quote",
+  title: "I dreamed I was a butterfly, flitting around in the sky; then I awoke. Now I wonder: Am I a man who dreamt of being a butterfly, or am I a butterfly dreaming that I am a man?",
+  body: "Zhuang Zhou",
+  author_id: 11
+)
+
 
 
 
@@ -667,7 +707,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 38,
+  post_id: 42,
   tag_id: 9
 )
 
@@ -689,7 +729,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 40,
+  post_id: 44,
   tag_id: 5
 )
 
@@ -703,11 +743,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 41,
+  post_id: 45,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 41,
+  post_id: 45,
   tag_id: 4
 )
 
@@ -728,7 +768,6 @@ Post.create(
   author_id: 8
 )
 
-
 Post.create(
   post_type: "photo",
   body: "Prototype for a new table design, available this summer!",
@@ -737,11 +776,11 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 44,
+  post_id: 48,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 44,
+  post_id: 48,
   tag_id: 8
 )
 
@@ -775,15 +814,15 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 48,
+  post_id: 52,
   tag_id: 1
 )
 Tagging.create(
-  post_id: 48,
+  post_id: 52,
   tag_id: 2
 )
 Tagging.create(
-  post_id: 48,
+  post_id: 52,
   tag_id: 3
 )
 
@@ -796,10 +835,18 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 49,
+  post_id: 53,
   tag_id: 2
 )
 
+
+
+Post.create(
+  post_type: "video",
+  body: "Efterklang's Piramida",
+  content_url: "https://www.youtube.com/embed/uiKK7ehFYtA",
+  author_id: 11
+)
 
 
 
@@ -812,7 +859,7 @@ Post.create(
 )
 
 Tagging.create(
-  post_id: 50,
+  post_id: 55,
   tag_id: 5
 )
 
@@ -836,6 +883,7 @@ Like.create(user_id: 1, post_id: 34)
 Like.create(user_id: 1, post_id: 37)
 Like.create(user_id: 1, post_id: 42)
 Like.create(user_id: 1, post_id: 49)
+Like.create(user_id: 1, post_id: 53)
 Like.create(user_id: 2, post_id: 5)
 Like.create(user_id: 2, post_id: 7)
 Like.create(user_id: 2, post_id: 9)
@@ -852,6 +900,8 @@ Like.create(user_id: 2, post_id: 41)
 Like.create(user_id: 2, post_id: 44)
 Like.create(user_id: 2, post_id: 46)
 Like.create(user_id: 2, post_id: 48)
+Like.create(user_id: 2, post_id: 51)
+Like.create(user_id: 2, post_id: 52)
 Like.create(user_id: 3, post_id: 2)
 Like.create(user_id: 3, post_id: 7)
 Like.create(user_id: 3, post_id: 9)
@@ -892,6 +942,8 @@ Like.create(user_id: 4, post_id: 47)
 Like.create(user_id: 4, post_id: 48)
 Like.create(user_id: 4, post_id: 49)
 Like.create(user_id: 4, post_id: 50)
+Like.create(user_id: 4, post_id: 54)
+Like.create(user_id: 4, post_id: 55)
 Like.create(user_id: 5, post_id: 2)
 Like.create(user_id: 5, post_id: 3)
 Like.create(user_id: 5, post_id: 6)
@@ -913,6 +965,9 @@ Like.create(user_id: 5, post_id: 45)
 Like.create(user_id: 5, post_id: 46)
 Like.create(user_id: 5, post_id: 48)
 Like.create(user_id: 5, post_id: 49)
+Like.create(user_id: 5, post_id: 51)
+Like.create(user_id: 5, post_id: 53)
+Like.create(user_id: 5, post_id: 55)
 Like.create(user_id: 6, post_id: 1)
 Like.create(user_id: 6, post_id: 2)
 Like.create(user_id: 6, post_id: 3)
@@ -934,6 +989,8 @@ Like.create(user_id: 6, post_id: 44)
 Like.create(user_id: 6, post_id: 45)
 Like.create(user_id: 6, post_id: 48)
 Like.create(user_id: 6, post_id: 50)
+Like.create(user_id: 6, post_id: 52)
+Like.create(user_id: 6, post_id: 54)
 Like.create(user_id: 7, post_id: 2)
 Like.create(user_id: 7, post_id: 3)
 Like.create(user_id: 7, post_id: 5)
@@ -953,6 +1010,8 @@ Like.create(user_id: 7, post_id: 43)
 Like.create(user_id: 7, post_id: 44)
 Like.create(user_id: 7, post_id: 47)
 Like.create(user_id: 7, post_id: 50)
+Like.create(user_id: 7, post_id: 53)
+Like.create(user_id: 7, post_id: 55)
 Like.create(user_id: 8, post_id: 1)
 Like.create(user_id: 8, post_id: 3)
 Like.create(user_id: 8, post_id: 4)
@@ -970,6 +1029,8 @@ Like.create(user_id: 8, post_id: 44)
 Like.create(user_id: 8, post_id: 45)
 Like.create(user_id: 8, post_id: 47)
 Like.create(user_id: 8, post_id: 49)
+Like.create(user_id: 8, post_id: 51)
+Like.create(user_id: 8, post_id: 52)
 Like.create(user_id: 9, post_id: 3)
 Like.create(user_id: 9, post_id: 16)
 Like.create(user_id: 9, post_id: 18)
@@ -980,6 +1041,7 @@ Like.create(user_id: 9, post_id: 33)
 Like.create(user_id: 9, post_id: 45)
 Like.create(user_id: 9, post_id: 49)
 Like.create(user_id: 9, post_id: 50)
+Like.create(user_id: 9, post_id: 54)
 Like.create(user_id: 10, post_id: 2)
 Like.create(user_id: 10, post_id: 4)
 Like.create(user_id: 10, post_id: 15)
@@ -992,6 +1054,9 @@ Like.create(user_id: 10, post_id: 39)
 Like.create(user_id: 10, post_id: 40)
 Like.create(user_id: 10, post_id: 41)
 Like.create(user_id: 10, post_id: 42)
+Like.create(user_id: 10, post_id: 49)
+Like.create(user_id: 10, post_id: 51)
+Like.create(user_id: 10, post_id: 55)
 Like.create(user_id: 11, post_id: 4)
 Like.create(user_id: 11, post_id: 7)
 Like.create(user_id: 11, post_id: 13)
@@ -1005,5 +1070,5 @@ Like.create(user_id: 11, post_id: 36)
 Like.create(user_id: 11, post_id: 38)
 Like.create(user_id: 11, post_id: 41)
 Like.create(user_id: 11, post_id: 44)
-Like.create(user_id: 11, post_id: 47)
-Like.create(user_id: 11, post_id: 50)
+Like.create(user_id: 11, post_id: 49)
+Like.create(user_id: 11, post_id: 54)

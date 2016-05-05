@@ -84,9 +84,14 @@ var AudioForm = React.createClass({
  			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
 
-          <input className="upload-button" type="submit"
-            value="Upload Audio" onClick={this.upload}></input>
-
+          {this.state.content_url === ""
+            ?
+              <input className="upload-button" type="submit"
+                value="Upload Audio" onClick={this.upload}></input>
+            :
+              <input className="upload-button uploaded" type="submit"
+                value="Change Uploaded Audio" onClick={this.upload}></input>
+          }
 
           <input className="audio-text-input" type="textarea" value={this.state.title}
             placeholder="Artist" onChange={this.updateTitle}></input>

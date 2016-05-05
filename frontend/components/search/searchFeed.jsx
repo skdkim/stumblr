@@ -13,7 +13,7 @@ var SearchFeed = React.createClass({
 
   componentDidMount: function() {
     this.postListener = PostStore.addListener(this._onChange);
-    PostClientActions.fetchPosts();
+    PostClientActions.fetchPosts({explore: true});
   },
 
   componentWillUnmount: function() {
@@ -32,15 +32,14 @@ var SearchFeed = React.createClass({
             return <BlogItem id={post.id} post={post}/>;
           });
 
-        return (
-            <Masonry
-                className={'search-feed'}
-                elementType={'div'}
-                disableImagesLoaded={false}
-            >
-                {childElements}
-            </Masonry>
-        );
+    return (
+        <Masonry
+            className={'search-feed'}
+            elementType={'div'}
+            disableImagesLoaded={false}>
+            {childElements}
+        </Masonry>
+    );
   }
 });
 

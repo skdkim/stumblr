@@ -219,7 +219,6 @@ var PostFeedItem = React.createClass({
         break;
     }
 
-
     return (
       <div className="post-container">
         <div className="user-photo-container">
@@ -230,9 +229,15 @@ var PostFeedItem = React.createClass({
             <p className="author" onClick={this.pushToBlog}>
               {this.props.post.author.username}
             </p>
-            <p className="follow-button" onClick={this.toggleFollow}>
-              {this.isFollowing()}
-            </p>
+
+            {this.state.currentUser.username !== this.props.post.author.username
+              ?
+                <p className="follow-button" onClick={this.toggleFollow}>
+                  {this.isFollowing()}
+                </p>
+              :
+                <p></p>
+            }
 
    				</div>
           <div className="post-content">
@@ -241,7 +246,7 @@ var PostFeedItem = React.createClass({
 
             <ul className="tags">
               {this.props.post.tags.map(function(tag){
-                return <li className="tag" id={tag.id}>#{tag.tag}</li>;
+                return <li className="tag" key={tag.id}>#{tag.tag}</li>;
               })}
             </ul>
 
