@@ -242,6 +242,14 @@
   margin: 2px;
 }
 
+.upload-button {
+  width: 540px;
+  height: 60px;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 22px;
+  background-color: white;
+}
 
 
 // text form
@@ -381,4 +389,62 @@ textarea {
 .video {
   position: relative;
   left: -24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+// search/blog feed
+
+.search-feed {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: auto;
+  position: relative;
+  top: 70px;
+}
+
+.blog-item {
+  display: flex;
+  width: 340px;
+  height: auto;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.blogfeed-photo {
+  width: 340px;
+  height: auto;
+  position: relative;
+  left: -22px;
+}
+
+.blogfeed-video {
+  position: relative;
+  left: -24px;
+}
+
+.blogfeed-tags {
+  width: 340px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  position: relative;
+  left: -40px;
+  padding-bottom: 25px;
+
+  list-style-type: none;
+  overflow: hidden;
 }

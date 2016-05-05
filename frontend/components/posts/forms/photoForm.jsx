@@ -55,13 +55,27 @@ var PhotoForm = React.createClass({
     });
   },
 
+  upload: function(e) {
+    var self = this;
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images) {
+        if (error === null) {
+          self.setState({
+            content_url: images[0].url
+          });
+        }
+    });
+  },
+
   render: function () {
     return(
       <div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
 
-
-
+          <input className="upload-button" type="submit"
+            value="Upload Image" onClick={this.upload}></input>
 
           <input className="caption-input" type="textarea" value={this.state.body}
             placeholder="Caption" onChange={this.updateBody}></input>
@@ -71,7 +85,7 @@ var PhotoForm = React.createClass({
           <div className="post-submit-bar">
             <input className="post-form-button" type="submit"
               value="Close" onClick={this.pushToDash}></input>
-            <input className="post-form-button"type="submit"
+            <input className="post-form-button" type="submit"
               value="Post" onClick={this.handleSubmit}></input>
           </div>
         </form>

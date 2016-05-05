@@ -66,7 +66,11 @@ class Api::PostsController < ApplicationController
     # elsif params[:explore]
     #   @posts = Post.includes(:tags, :notes).order('created_at DESC')
     else
-      @posts = Post.includes(:tags, :notes).where(:author => current_user.followeds).order('created_at DESC')
+      if (current_user)
+        @posts = Post.includes(:tags, :notes).where(:author => current_user.followeds).order('created_at DESC')
+      else
+        @posts = Post.includes(:tags, :notes).order('created_at DESC')
+      end
     end
   end
 

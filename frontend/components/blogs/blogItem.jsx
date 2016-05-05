@@ -17,7 +17,7 @@ var PostsFeed = React.createClass({
   photoPost: function() {
     return (
             <div>
-              <img className="photo" src={this.props.post.content_url}></img>
+              <img className="blogfeed-photo" src={this.props.post.content_url}></img>
               <div className="body">{this.props.post.body}</div>
             </div>
     );
@@ -63,9 +63,9 @@ var PostsFeed = React.createClass({
   videoPost: function() {
     return (
             <div>
-              <div className="video">
+              <div className="blogfeed-video">
                 <iframe
-                  width="540"
+                  width="340"
                   height="300"
                   src={this.props.post.content_url}
                   frameborder="0"
@@ -79,7 +79,7 @@ var PostsFeed = React.createClass({
   },
 
   pushToBlog: function() {
-    // HashHistory.push('/users/' + this.props.)
+    HashHistory.push('/users/' + this.props.post.author.id);
   },
 
  	render: function () {
@@ -116,7 +116,7 @@ var PostsFeed = React.createClass({
 
           {content}
 
-          <ul className="tags">
+          <ul className="blogfeed-tags">
             {this.props.post.tags.map(function(tag){
               return <li className="tag" id={tag.id}>#{tag.tag}</li>;
             })}

@@ -2,6 +2,7 @@ var React = require('react');
 var PostStore = require('../../stores/postStore');
 var PostClientActions = require('../../actions/posts/postClientActions');
 var BlogItem = require('../blogs/blogItem');
+var Masonry = require('react-masonry-component');
 
 var SearchFeed = React.createClass({
   getInitialState: function() {
@@ -26,13 +27,20 @@ var SearchFeed = React.createClass({
   },
 
   render: function() {
-    return (
-      <div>
-        {this.state.posts.map(function(post) {
-          return <BlogItem id={post.id} post={post}/>;
-        })}
-      </div>
-    );
+    var childElements =
+          this.state.posts.map(function(post) {
+            return <BlogItem id={post.id} post={post}/>;
+          });
+
+        return (
+            <Masonry
+                className={'search-feed'}
+                elementType={'div'}
+                disableImagesLoaded={false}
+            >
+                {childElements}
+            </Masonry>
+        );
   }
 });
 

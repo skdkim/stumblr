@@ -49,6 +49,7 @@ var AudioForm = React.createClass({
     PostClientActions.createPost(
       {
         post_type: "audio",
+        content_url: this.state.content_url,
         title: this.state.title,
         body: this.state.body,
         tags: this.state.tags
@@ -63,12 +64,28 @@ var AudioForm = React.createClass({
     });
   },
 
+
+  upload: function(e) {
+    var self = this;
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images) {
+        if (error === null) {
+          self.setState({
+            content_url: images[0].url
+          });
+        }
+    });
+  },
+
  	render: function () {
  		return(
  			<div className="post-form-container">
         <form className="post-form" onSubmit={this.handleSubmit}>
 
-
+          <input className="upload-button" type="submit"
+            value="Upload Audio" onClick={this.upload}></input>
 
 
           <input className="audio-text-input" type="textarea" value={this.state.title}

@@ -15,8 +15,8 @@ var NavBar = React.createClass({
     HashHistory.push('/dashboard');
   },
 
-  pushToSearch: function() {
-    HashHistory.push('/search/');
+  pushToExplore: function() {
+    HashHistory.push('/explore/');
   },
 
   navRight: function() {
@@ -24,7 +24,7 @@ var NavBar = React.createClass({
       return (
         <div className="nav-right">
           <img className="nav-icon" onClick={this.pushToDash} src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462225052/home_n9c9qv.png"></img>
-          <img className="nav-icon" onClick={this.pushToSearch} src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462225052/compass_wwlply.png"></img>
+          <img className="nav-icon" onClick={this.pushToExplore} src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462225052/compass_wwlply.png"></img>
           <img className="nav-icon" onClick={this.pushToProfile} src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462225784/user_tqcx1r.png"></img>
           <img className="nav-icon" onClick={this.logout} src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462224009/poweroff_wmvl7k.png"></img>
         </div>
