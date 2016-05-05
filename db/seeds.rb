@@ -602,7 +602,7 @@ Post.create(
 Post.create(
   post_type: "text",
   title: "Drawing/painting time this Wednesday at 6:30pm!",
-  body: "Come by DU on Wednesday evening (April 13, 6:30-8:30 pm) to practice drawing, painting, or work on other kinds of projects! We have some watercolor, ink, pencils, paper, and other supplies, and you can bring your own favorites. Sometimes people even bring some to share - you can try something new.What you work on is up to you! For example, you could find a person to trade practicing drawing/painting portraits of each other, or figure out a fun still life from the things at the space.",
+  body: "Come by DU on Wednesday evening to practice drawing or painting, or to work on any other kind of project! We have some watercolors, ink, pencils, paper, and other supplies, and you can bring your own favorites.",
   author_id: 8
 )
 

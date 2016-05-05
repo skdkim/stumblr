@@ -14,11 +14,7 @@ var PostFeedItem = React.createClass({
             <div>
               <div className="title">{this.props.post.title}</div>
               <div className="body">
-                {this.props.post.body.indexOf('\n') > -1
-                  ?
-                    <pre>{this.props.post.body}</pre>
-                  :
-                    this.props.post.body}
+                {this.props.post.body}
               </div>
             </div>
     );
@@ -118,8 +114,6 @@ var PostFeedItem = React.createClass({
       </div>
     );
   },
-//  colored heart for later
-// <img className="post-nav-icon" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462208031/heartcolor_skwnkr.jpg"></img>
 
 
   isLiked: function() {

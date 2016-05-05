@@ -2,8 +2,6 @@ class Api::SessionsController < ApplicationController
   def new
   end
 
-  # delete the duplicates of me from database and try login again; try beyonce login
-
   def create
     @user = User.find_by_credentials(
       params[:user][:username],
