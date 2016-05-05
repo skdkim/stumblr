@@ -4,6 +4,7 @@ var PostStore = require('../../stores/postStore');
 var UserStore = require('../../stores/userStore');
 var PostClientActions = require('../../actions/posts/postClientActions');
 var UserClientActions = require('../../actions/user/userClientActions');
+var FollowActions = require('../../actions/followActions');
 var CurrentUserStateMixin = require('../../mixins/currentUserState');
 var HashHistory = require('react-router').hashHistory;
 var Masonry = require('react-masonry-component');
@@ -43,6 +44,33 @@ var PostsFeed = React.createClass({
     });
   },
 
+  isFollowing: function() {
+    var currentUser = this.state.currentUser;
+    if (currentUser) {
+      var followeds = currentUser.followeds;
+      if (followeds.indexOf(this.state.author.id) > -1) {
+        return "unfollow";
+      } else {
+        return "follow";
+      }
+    }
+  },
+
+  toggleFollow: function() {
+    var followData = {
+      follower_id: this.state.currentUser.id,
+      followed_id: this.state.author.id
+    };
+
+    if (this.isFollowing() === "unfollow") {
+      FollowActions.deleteFollow(followData);
+    } else {
+      FollowActions.createFollow(followData);
+    }
+
+    PostClientActions.fetchPosts();
+  },
+
  	render: function () {
     var childElements =
           this.state.posts.map(function(post) {
@@ -62,6 +90,17 @@ var PostsFeed = React.createClass({
               </div>
               <div className="author-info">{this.state.author.blog_title}</div>
               <div className="author-info blog-description">{this.state.author.blog_description}</div>
+
+              {this.state.currentUser.username !== this.state.author.username
+                ?
+                  <input type="submit" className="follow-button"
+                    value={this.isFollowing()} onClick={this.toggleFollow}>
+                  </input>
+                :
+                  <p></p>
+              }
+
+
             </div>
             <Masonry
                 className={'blog'}

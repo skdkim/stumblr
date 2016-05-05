@@ -226,7 +226,7 @@ var PostFeedItem = React.createClass({
 
             {this.state.currentUser.username !== this.props.post.author.username
               ?
-                <p className="follow-button" onClick={this.toggleFollow}>
+                <p className="follow-link" onClick={this.toggleFollow}>
                   {this.isFollowing()}
                 </p>
               :

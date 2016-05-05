@@ -1,105 +1,64 @@
-### Heroku Link
+# Stumblr
 
-[Stumblr](http://stumblr-.herokuapp.com/)
-(Don't worry I'm going to change this weird dash url to an actual domain name)
+[Stumblr live](http://stumblr-.herokuapp.com/)
 
-### Minimum Viable Product
+Stumblr is a full-stack web application modeled after Tumblr.  It is built on a Ruby on Rails backend, PostgreSQL database, and React.js/Flux architecture frontend.
 
-Stumblr is a web application influenced by Tumblr, allowing users to share and interact with blog posts of various media types. Built using Ruby on Rails and React.js, it will include these minimum features:
-- [O] Account creation, user login, and demo login
-- [O] Seed data to illustrate the app's features
-- [O] Posting of text, photos, links, audio, and video
-- [ ] Interaction with other users' posts (liking and reblogging)
-- [ ] Post tagging and search by tags
-- [ ] Bug-free
-- [X] Hosted on Heroku
-- [O] Styled and interactive (user action feedback)
-- [ ] Production readme (to replace this readme)
 
-### Design Docs
+## Features & Implementation
 
-- [Wireframes folder](https://github.com/quinnleong/stumblr/tree/master/design_docs/wireframes)
-- [Components](https://github.com/quinnleong/stumblr/blob/master/design_docs/Components.md)
-- [Flux Cycles](https://github.com/quinnleong/stumblr/blob/master/design_docs/flux_cycles.md)
-- [API Endpoints](https://github.com/quinnleong/stumblr/blob/master/design_docs/api_endpoints.md)
-- [DB Schema](https://github.com/quinnleong/stumblr/blob/master/design_docs/db_schema.md)
+### Post Creation and Display
 
-### Implementation Timeline
+Users can create six different types of posts via media-specific forms. The various types of posts render differently based on post type, with all overlapping logic shared within the `render` method of their component.
 
-### Phase 1: Backend Setup and User Authentication (0.5 days)
+Posts are retrieved within the Rails `PostController` using database queries based on the component that is rendering:
+  - `SearchFeed`: posts that match a given tag entered in the search input
+  - `Blog`: posts whose author matches the blog's author
+  - `Explore`: all posts
+  - `PostsFeed`: posts authored by user the current user follows and the current user's own posts
+Upon each component's mount, the `PostStore` is called to fetch posts and stores the query-returned posts until a new fetch is called.
 
-**Objective:** Setup functioning rails project with authentication.
+Posts can be displayed in two different formats. Within the dashboard (`PostsFeed`), posts are arranged in a single column that takes up much of the page's width for detailed display. Within the `SearchFeed` and a user's individual `Blog`, posts are displayed in a grid, implemented with the Masonry.js library for clean display, optimization of space, and transitions.
 
-- [X] create new project
-- [X] create `User` model
-- [X] authentication
-- [X] user signup/signin pages
-- [X] blank landing page after signin
+![image of search feed](https://github.com/quinnleong/stumblr/blob/master/design_docs/explore.png)
 
-### Phase 2: Posts Model, API, and APIUtil (1.5 days)
 
-**Objective:** Posts can be created, read, edited and destroyed through
-the API.
+### Post Interactions
 
-- [X] create `Post` model
-- [O] seed the database
-- [X] CRUD API for posts (`PostsController`)
-- [X] jBuilder views for posts
-- [X] setup `APIUtil` to interact with the API
-- [O] file hosting of some kind (lightning talk on this to come?)
+Users can interact with posts in two ways.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+On the dashboard, all posts by other users are likeable. Clicking the heart included with a post turns it red, providing instant visual feedback. Additionally, this adds a note to the post, incrementing the note count, displayed at the bottom of each post.
 
-**Objective:** Posts can be created, read, edited and destroyed with the
-user interface.
+All posts are rebloggable, including a user's own posts. Clicking the reblog button posts a duplicate of that post under the current user's authorship at the current time, however long ago the original was posted.
 
-- [X] setup the flux loop with skeleton files
-- [X] setup React Router
-- implement each post component, building out the flux loop as needed.
-  - [X] `PostsGenerator`
-  - [X] `PostsFeed`
-  - [X] `PostsFeedItem`
-  - [X] `PostForm`
-  - [ ] `PostsNote`
-- [X] work out differentiation between content types in forms, creation, and display
-- [ ] infinite scroll
 
-### Phase 4: Taggings and Search (1.5 days)
+### User Interaction
 
-**Objective:** Posts can be given multiple tags, which can be used to search posts.
+Users can follow each other. This allows for customization of a user's dashboard; on that page, they will only see posts from the users they follow. To find new users to follow, they can visit the explore page to see all posts on Stumblr and to search them by tag.
 
-- [X] create `Tagging` model
-- [ ] seed database with tag data
-- [ ] build out API, Flux loop, and components for:
-  - [ ] adding tags to post
-  - [ ] updating tags on post (additional tags or deleting tags)
-- [ ] create `SearchInput` and `SearchFeed` components
 
-### Phase 7: Likes, Reblogs, and Notes (2 days)
+### Tags
 
-**objective:** Users can like and repost other users' posts, and this adds notes to those posts.
+Users can give posts any number of tags. If a tag is given that does not yet exist in the database, it is created. The associated tags are then displayed under each post wherever they appear on the site.
 
-- [ ] build out `notes` model
-- [ ] seed database with notes data
-- [ ] CRUD API for notes
-- [ ] user interface for CRUD
 
-### Phase 8: Blog Feed (1 day)
+## Ideas for Future Work
 
-**objective:** Users each have their own templated feed of posts.
+### Infinite Scroll
 
-- [ ] build out `BlogFeed` and `BlogFeedItem` components
-- [ ] style as grid and with different theme than homepage/main app
+One great feature Tumblr uses is infinite scroll. Stumblr is not to the size where this feature is necessary, but it is one I would like to implement nonetheless, as it would allow the app to scale well and still load very efficiently.
 
-### Phase 9: Clean-up (2 days)
 
-**objective** Finish up any remaining unfinished pieces and make improvements as time allows.
+### Push notifications
 
-- [ ] Walk through check-lists for every feature and finish/fix any remaining issues
-- [ ] Clean up and/or improve styling
-- [ ] Move on to bonus features if time allows
+In real time, users would see a counter of new posts that have been created since they loaded the page. In keeping with Tumblr's style, this number would appear on the home button within the `navbar` so that it is visible even if the user is scrolled far down the dashboard.
 
-## Bonus Features
 
-- Push notifications
-- Multiple photos per photo post
+### Multiple Photos per Post
+
+This feature is not necessary for functionality, but it would add a nice level of visual complexity and interest. I envision implementing this using the Packery.js library to allow for drag-and-drop interaction when organizing photo grids.
+
+
+### User-to-User and Anonymous messaging
+
+Adding messaging would allow users to message each other privately, and for anyone, including visitors who are not registered or logged in, to send anonymous messages to any user who enables the feature. These messages would optionally integrate with posts; users would be able to respond to messages from fellow users privately or to post their responses publicly, and all responses to anonymous messages would become posts on that user's blog.
