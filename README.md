@@ -37,9 +37,13 @@ All posts are rebloggable, including a user's own posts. Clicking the reblog but
 Users can follow each other. This allows for customization of a user's dashboard; on that page, they will only see posts from the users they follow. To find new users to follow, they can visit the explore page to see all posts on Stumblr and to search them by tag.
 
 
-### Tags
+### Tags and Search
 
 Users can give posts any number of tags. If a tag is given that does not yet exist in the database, it is created. The associated tags are then displayed under each post wherever they appear on the site.
+
+The search bar at the top utilizes tags to filter posts. Posts can be filtered both on the explore page and on the user's home dashboard.
+
+![image of search by tag 'design'](https://github.com/quinnleong/stumblr/blob/master/design_docs/search.png)
 
 
 ## Ideas for Future Work
