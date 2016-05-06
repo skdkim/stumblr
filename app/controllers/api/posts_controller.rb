@@ -10,6 +10,10 @@ class Api::PostsController < ApplicationController
       @post.content_url.sub!('watch?v=', 'embed/')
     end
 
+    if @post.post_type == "link" && !@post.content_url.index("http")
+      @post.content_url = "https://" + @post.content_url
+    end
+
     tags = params[:post][:tags]
     saved = false
 
