@@ -42,7 +42,7 @@ var NavBar = React.createClass({
     return (
       <div className="navbar">
         <div className="nav-left">
-          <img className="logo" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1461962894/logo4_hmykzh.jpg" onClick={this.pushToDash}/>
+          <img className="logo" src="http://res.cloudinary.com/dn07p1frq/image/upload/v1462493948/logonew_otddby.png" onClick={this.pushToDash}/>
           <SearchBar/>
         </div>
         {this.navRight()}

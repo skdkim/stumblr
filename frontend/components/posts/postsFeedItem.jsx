@@ -216,7 +216,11 @@ var PostFeedItem = React.createClass({
     return (
       <div className="post-container">
         <div className="user-photo-container">
-          <img className="user-photo" src={this.props.post.author.profile_image_url}></img>
+          <img
+            className="user-photo"
+            src={this.props.post.author.profile_image_url}
+            onClick={this.pushToBlog}>
+          </img>
         </div>
         <div className="post">
    				<div className="post-bar">
