@@ -11,6 +11,8 @@
   - cloudinary just being slow
 - ~~more reliable way to choose whether to add `<pre>` tag to text post's body?~~
   - no need for pre-tag; just style `body` with `white-space: pre-wrap`
+- ~~link not working because just pushing url into HashHistory~~
+  - add to `<a>` tag: `target="_blank"`
 
 ## In Progress
 

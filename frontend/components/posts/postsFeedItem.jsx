@@ -41,7 +41,7 @@ var PostFeedItem = React.createClass({
   linkPost: function() {
     return (
             <div>
-              <a className="url" href={this.props.post.content_url}>{this.props.post.title}</a>
+              <a className="url" target="_blank" href={this.props.post.content_url}>{this.props.post.title}</a>
               <div className="body">{this.props.post.body}</div>
             </div>
     );
