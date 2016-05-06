@@ -9,7 +9,8 @@
     - within the client actions fetch action
 - ~~audio posts don't play until after refresh~~
   - cloudinary just being slow
-- more reliable way to choose whether to add `<pre>` tag to text post's body?
+- ~~more reliable way to choose whether to add `<pre>` tag to text post's body?~~
+  - no need for pre-tag; just style `body` with `white-space: pre-wrap`
 
 ## In Progress
 

@@ -18,6 +18,10 @@ var SearchBar = React.createClass({
     e.preventDefault();
 
     PostClientActions.fetchPosts({searchInput: this.state.searchInput});
+
+    this.setState({
+      searchInput: "" 
+    });
   },
 
   render: function() {
